@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Av. Mücahit Çelik – Hukuk Bürosu</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#b8973a;--gold-light:#d4b054;--gold-pale:#f5edd8;
+  --dark:#1a1814;--dark-mid:#2c2820;--mid:#4a4540;--muted:#7a7268;
+  --light:#f9f6f0;--white:#ffffff;--border:rgba(184,151,58,0.25);
+  --border2:rgba(184,151,58,0.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--light);color:var(--dark);font-size:16px;line-height:1.7}
+.page{display:none}
+.page.active{display:block}
+nav{position:sticky;top:0;z-index:1000;background:var(--dark);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:70px;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:12px;line-height:1.2;cursor:pointer;flex-shrink:0}
+.nav-logo .logo-mark{width:54px;height:54px;flex-shrink:0}
+.nav-logo .logo-text{display:flex;flex-direction:column}
+.nav-logo .title{font-family:'Great Vibes',cursive;font-size:32px;color:var(--gold-light);letter-spacing:0.5px;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,0.3)}
+.nav-logo .subtitle{font-size:9px;color:var(--muted);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
+.nav-links a{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#9a9488;transition:color 0.2s;cursor:pointer;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-links a.active{border-bottom:1px solid var(--gold);padding-bottom:1px}
+.nav-cta{text-decoration:none;background:var(--gold);color:var(--dark);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:9px 18px;border-radius:2px;transition:background 0.2s;white-space:nowrap;cursor:pointer;border:none}
+.nav-cta:hover{background:var(--gold-light)}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold-light);border-radius:1px}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--dark);z-index:999;padding:1rem 2rem 1.5rem;border-bottom:1px solid var(--border);flex-direction:column}
+.mobile-menu a{display:block;padding:10px 0;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#9a9488;text-decoration:none;border-bottom:1px solid var(--border2);cursor:pointer}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold-light)}
+.mobile-menu.open{display:flex}
+.hero{background:var(--dark);padding:80px 3rem 72px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(184,151,58,0.02) 60px,rgba(184,151,58,0.02) 61px)}
+.hero-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:5px 16px;margin-bottom:24px;border-radius:1px;position:relative}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,54px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:14px;position:relative}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:14px;color:#7a7470;max-width:520px;margin:0 auto 36px;font-weight:300;position:relative}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+.hero-btn{display:inline-block;text-decoration:none;background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 36px;border-radius:2px;transition:background 0.2s,transform 0.15s;cursor:pointer;border:none}
+.hero-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
+.hero-btn.secondary{background:transparent;color:var(--gold-light);border:1px solid var(--border)}
+.hero-btn.secondary:hover{background:rgba(184,151,58,0.1)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:36px}
+.svc-card{background:var(--white);padding:36px 28px;transition:background 0.15s;cursor:pointer}
+.svc-card:hover{background:var(--gold-pale)}
+.svc-tag{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark);margin-bottom:10px}
+.svc-card p{font-size:14px;color:var(--muted);line-height:1.75}
+.svc-link{display:inline-block;margin-top:16px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px}
+.about-strip{background:var(--dark);padding:72px 3rem;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-img-placeholder{width:100%;aspect-ratio:3/4;background:var(--dark-mid);border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.about-img-placeholder svg{opacity:0.25;width:80px;height:80px;fill:var(--gold)}
+.about-img-placeholder span{font-size:11px;color:var(--muted);letter-spacing:0.1em}
+.about-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.about-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);color:var(--white);line-height:1.25;margin-bottom:18px}
+.about-body{font-size:14px;color:#8a847a;line-height:1.85}
+.about-body p+p{margin-top:1rem}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:box-shadow 0.2s;cursor:pointer}
+.blog-card:hover{box-shadow:0 4px 24px rgba(184,151,58,0.12)}
+.blog-thumb{width:100%;height:150px;background:var(--dark-mid);display:flex;align-items:center;justify-content:center}
+.blog-thumb svg{opacity:0.18;width:44px;height:44px;fill:var(--gold)}
+.blog-meta{padding:18px}
+.blog-cat{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.blog-card h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.4;margin-bottom:8px}
+.blog-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.blog-card .blog-author{font-size:11px;color:var(--muted);margin-top:10px}
+.section{max-width:1080px;margin:0 auto;padding:64px 3rem}
+.section-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px}
+.section-body{font-size:15px;color:var(--mid);line-height:1.85}
+.section-body p+p{margin-top:1rem}
+.ornament{text-align:center;padding:32px 0;color:var(--gold);font-size:18px;letter-spacing:12px}
+.page-header{background:var(--dark);padding:60px 3rem 52px;border-bottom:1px solid var(--border)}
+.page-header .section-label{margin-bottom:10px}
+.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);color:var(--white);line-height:1.2}
+.page-header p{font-size:14px;color:#7a7470;margin-top:12px;max-width:600px;font-weight:300}
+.kurumsal-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
+.kurumsal-bio{font-size:15px;color:var(--mid);line-height:1.85}
+.kurumsal-bio p+p{margin-top:1rem}
+.alanlar-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.alan-item{padding:24px 28px;border-bottom:1px solid var(--border);background:var(--white);transition:background 0.15s;cursor:pointer}
+.alan-item:last-child{border-bottom:none}
+.alan-item:hover{background:var(--gold-pale)}
+.alan-item h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:6px}
+.alan-item p{font-size:13px;color:var(--muted);line-height:1.7}
+.hukuk-content{font-size:15px;color:var(--mid);line-height:1.9}
+.hukuk-content h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--dark);margin:2rem 0 0.75rem}
+.hukuk-content h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--dark);margin:1.5rem 0 0.5rem}
+.hukuk-content p{margin-bottom:0.8rem}
+.hukuk-content ul,.hukuk-content ol{margin:0.75rem 0 0.75rem 1.5rem}
+.hukuk-content li{margin-bottom:0.4rem;font-size:14px;color:var(--mid)}
+.hukuk-content hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
+.hukuk-content strong{color:var(--dark);font-weight:600}
+.suclar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:1.5rem 0}
+.suc-grup{background:var(--white);padding:20px}
+.suc-grup h4{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
+.suc-grup ul{margin:0;padding-left:1rem}
+.suc-grup li{font-size:13px;color:var(--mid);margin-bottom:4px}
+.gorev-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:1.5rem 0}
+.gorev-item{display:flex;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);background:var(--white)}
+.gorev-item:last-child{border-bottom:none}
+.gorev-num{flex-shrink:0;width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;color:var(--gold);margin-top:2px}
+.gorev-item h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px}
+.gorev-item p{font-size:13px;color:var(--muted);line-height:1.65}
+.sss-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:1.5rem}
+.sss-item{border-bottom:1px solid var(--border);background:var(--white)}
+.sss-item:last-child{border-bottom:none}
+.sss-q{padding:18px 24px;font-weight:600;font-size:14px;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.15s;user-select:none}
+.sss-q:hover{background:var(--gold-pale)}
+.sss-q::after{content:'+';font-size:18px;color:var(--gold);flex-shrink:0;transition:transform 0.2s;margin-left:12px}
+.sss-item.open .sss-q::after{transform:rotate(45deg)}
+.sss-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.sss-item.open .sss-a{max-height:400px}
+.sss-a-inner{padding:0 24px 18px;font-size:13px;color:var(--muted);line-height:1.75}
+.sss-a-inner ul{padding-left:1.2rem;margin-top:0.5rem}
+.sss-a-inner li{margin-bottom:0.3rem}
+.etahsilat-hero{background:var(--dark);padding:68px 3rem;text-align:center;border-top:3px solid var(--gold);border-bottom:1px solid var(--border)}
+.pay-btn{display:inline-block;text-decoration:none;background:var(--gold);color:var(--dark);font-family:'Playfair Display',serif;font-size:15px;font-weight:700;padding:18px 48px;border-radius:2px;transition:background 0.2s,transform 0.15s;letter-spacing:0.04em;cursor:pointer;border:none}
+.pay-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+.pay-hint{font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:0.05em}
+.avantaj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:36px}
+.avantaj-card{background:var(--white);padding:26px 20px}
+.avantaj-num{font-family:'Playfair Display',serif;font-size:12px;color:var(--gold);letter-spacing:0.15em;margin-bottom:10px}
+.avantaj-card h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);margin-bottom:8px}
+.avantaj-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.steps-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:32px}
+.step-row{display:flex;gap:20px;padding:22px 28px;border-bottom:1px solid var(--border);background:var(--white);transition:background 0.15s}
+.step-row:last-child{border-bottom:none}
+.step-row:hover{background:var(--gold-pale)}
+.step-n{flex-shrink:0;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;color:var(--gold);margin-top:2px}
+.step-row h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);margin-bottom:4px}
+.step-row p{font-size:13px;color:var(--muted);line-height:1.65}
+.logos-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.logo-pill{background:var(--white);border:1px solid var(--border);padding:7px 18px;border-radius:2px;font-size:12px;font-weight:600;color:var(--mid)}
+.secure-pill{border-color:rgba(184,151,58,0.5);color:var(--gold)}
+.iletisim-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:36px}
+.iletisim-card{background:var(--white);border:1px solid var(--border);border-radius:3px;padding:28px}
+.iletisim-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--dark);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.iletisim-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.iletisim-row:last-child{margin-bottom:0}
+.iletisim-icon{flex-shrink:0;width:34px;height:34px;background:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.iletisim-icon svg{width:15px;height:15px;fill:var(--gold)}
+.lbl{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.val{font-size:14px;color:var(--mid);line-height:1.6}
+.val a{color:var(--mid);text-decoration:none;transition:color 0.2s}
+.val a:hover{color:var(--gold)}
+.map-placeholder{background:var(--dark-mid);border:1px solid var(--border);border-radius:3px;height:240px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;margin-top:16px}
+.map-placeholder svg{width:32px;height:32px;fill:var(--gold);opacity:0.4}
+.map-placeholder p{font-size:12px;color:var(--muted);letter-spacing:0.08em}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:#25d366;color:#fff;text-decoration:none;padding:12px 22px;border-radius:2px;font-size:13px;font-weight:600;transition:opacity 0.2s;cursor:pointer;border:none}
+.wa-btn:hover{opacity:0.9}
+.wa-btn svg{width:18px;height:18px;fill:#fff}
+.info-band{background:var(--dark);padding:52px 3rem;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:0;align-items:start;border-top:1px solid var(--border)}
+.info-divider{background:var(--border);align-self:stretch;margin:0 28px}
+.info-col{padding:6px 20px}
+.info-col:first-child{padding-left:0}
+.info-label-f{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.info-col a{color:#8a847a;text-decoration:none;font-size:13px;line-height:1.9;display:block;transition:color 0.2s;cursor:pointer}
+.info-col a:hover{color:var(--gold-light)}
+.info-col p{color:#7a7470;font-size:13px;line-height:1.9}
+.online-pay-link{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;cursor:pointer}
+footer{background:#0f0d0b;border-top:1px solid var(--border);padding:22px 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:11px;color:#453f38;text-decoration:none;transition:color 0.2s;cursor:pointer}
+.flinks a:hover{color:var(--gold)}
+.wa-float{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.2s;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:24px;height:24px;fill:white}
+.call-float{position:fixed;bottom:84px;right:24px;width:50px;height:50px;background:var(--gold,#c8a86b);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.2s;z-index:500;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.call-float:hover{transform:scale(1.1)}
+.call-float svg{width:24px;height:24px;fill:white}
+.reviews-wrap{max-width:1280px;margin:36px auto 0;display:grid;grid-template-columns:260px 1fr;gap:36px;align-items:center}
+.reviews-summary{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.reviews-summary-label{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:0.06em;color:var(--dark)}
+.stars-row{display:flex;gap:3px}
+.stars-row svg{fill:#fbbc04}
+.reviews-summary .stars-row svg{width:30px;height:30px}
+.reviews-count{font-size:13px;color:var(--mid);font-weight:500}
+.google-logo svg{height:34px;width:auto;display:block;margin-top:4px}
+.reviews-carousel{position:relative;overflow:hidden;border-radius:8px}
+.reviews-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 0;scrollbar-width:none}
+.reviews-track::-webkit-scrollbar{display:none}
+.review-card{flex:0 0 290px;min-height:210px;background:var(--white);border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,0.07);padding:20px;scroll-snap-align:start;display:flex;flex-direction:column;gap:12px}
+.review-new-badge{display:inline-block;background:#e8f0fe;color:#1a73e8;font-size:9px;font-weight:700;letter-spacing:0.08em;padding:2px 6px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.review-local-guide{font-size:11px;color:#5f6368;margin-top:1px}
+.review-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.review-user{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.review-avatar{width:42px;height:42px;border-radius:50%;background:#dadce0;color:#3c4043;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;flex-shrink:0;overflow:hidden}
+.review-avatar img{width:100%;height:100%;object-fit:cover}
+.review-info{display:flex;flex-direction:column;min-width:0}
+.review-name{font-size:14px;font-weight:600;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.review-date{font-size:12px;color:#7a7470;margin-top:1px}
+.review-google-icon{flex-shrink:0;width:22px;height:22px}
+.review-stars-row{display:flex;align-items:center;gap:6px}
+.review-stars-row .stars-row svg{width:14px;height:14px}
+.review-verified{width:14px;height:14px;flex-shrink:0}
+.review-text{font-size:13px;line-height:1.6;color:#3c4043;flex:1;margin:0}
+.review-more{font-size:12px;color:#1a73e8;font-weight:600;cursor:pointer;text-decoration:none;align-self:flex-start}
+.review-more:hover{text-decoration:underline}
+.rev-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:var(--white);border:none;box-shadow:0 2px 12px rgba(0,0,0,0.22);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;font-size:22px;line-height:1;color:var(--mid);transition:background 0.2s,transform 0.2s}
+.rev-arrow:hover{background:var(--gold-pale);transform:translateY(-50%) scale(1.08)}
+.rev-prev{left:8px}
+.rev-next{right:8px}
+.dark-cta-box{background:var(--dark);border:1px solid var(--border);border-radius:3px;padding:32px;text-align:center;margin-top:40px}
+.dark-cta-box .dlab{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.dark-cta-box p{font-size:14px;color:#8a847a;line-height:1.8;max-width:580px;margin:0 auto 24px}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .about-strip{grid-template-columns:1fr;gap:32px;padding:48px 1.5rem}
+  .about-img-placeholder{display:none}
+  .reviews-wrap{grid-template-columns:1fr;gap:24px;margin-top:24px}
+  .review-card{flex:0 0 86%;min-width:0}
+  .rev-arrow{display:none}
+  .kurumsal-grid{grid-template-columns:1fr}
+  .iletisim-grid{grid-template-columns:1fr}
+  .info-band{grid-template-columns:1fr;padding:36px 1.5rem;gap:24px}
+  .info-divider{display:none}
+  .info-col{padding:0}
+  .section{padding:48px 1.5rem}
+  .page-header{padding:44px 1.5rem 36px}
+  .hero{padding:60px 1.5rem}
+  .etahsilat-hero{padding:52px 1.5rem}
+  footer{padding:18px 1.5rem;flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  .suclar-grid{grid-template-columns:1fr}
+  .btn-row{flex-direction:column;align-items:center}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.page.active .hero>*{animation:fadeUp 0.5s ease both}
+.page.active .hero .hero-badge{animation-delay:0.05s}
+.page.active .hero h1{animation-delay:0.2s}
+.page.active .hero .hero-sub{animation-delay:0.35s}
+.page.active .hero .btn-row{animation-delay:0.5s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showPage('anasayfa')">
+    <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Av. Mücahit Çelik">
+      <circle cx="50" cy="50" r="49" fill="#1a1814" stroke="#b8973a" stroke-width="0.6"/>
+      <g fill="#d4b054" stroke="#d4b054" stroke-linecap="round">
+        <circle cx="50" cy="22" r="1.8"/>
+        <rect x="49.2" y="23" width="1.6" height="48"/>
+        <rect x="32" y="34" width="36" height="1.4"/>
+        <line x1="34" y1="35" x2="30" y2="44" stroke-width="0.7" fill="none"/>
+        <line x1="34" y1="35" x2="38" y2="44" stroke-width="0.7" fill="none"/>
+        <line x1="66" y1="35" x2="62" y2="44" stroke-width="0.7" fill="none"/>
+        <line x1="66" y1="35" x2="70" y2="44" stroke-width="0.7" fill="none"/>
+        <path d="M28 44 Q34 50 40 44 Z"/>
+        <path d="M60 44 Q66 50 72 44 Z"/>
+        <rect x="40" y="71" width="20" height="1.6"/>
+        <rect x="44" y="73" width="12" height="1.6"/>
+      </g>
+      <g fill="#d4b054">
+        <ellipse cx="20" cy="62" rx="3.2" ry="1.4" transform="rotate(70 20 62)"/>
+        <ellipse cx="17" cy="53" rx="3.2" ry="1.4" transform="rotate(55 17 53)"/>
+        <ellipse cx="16" cy="44" rx="3.2" ry="1.4" transform="rotate(35 16 44)"/>
+        <ellipse cx="18" cy="35" rx="3.2" ry="1.4" transform="rotate(15 18 35)"/>
+        <ellipse cx="22" cy="27" rx="3.2" ry="1.4" transform="rotate(-10 22 27)"/>
+        <ellipse cx="28" cy="21" rx="3.2" ry="1.4" transform="rotate(-35 28 21)"/>
+        <ellipse cx="80" cy="62" rx="3.2" ry="1.4" transform="rotate(-70 80 62)"/>
+        <ellipse cx="83" cy="53" rx="3.2" ry="1.4" transform="rotate(-55 83 53)"/>
+        <ellipse cx="84" cy="44" rx="3.2" ry="1.4" transform="rotate(-35 84 44)"/>
+        <ellipse cx="82" cy="35" rx="3.2" ry="1.4" transform="rotate(-15 82 35)"/>
+        <ellipse cx="78" cy="27" rx="3.2" ry="1.4" transform="rotate(10 78 27)"/>
+        <ellipse cx="72" cy="21" rx="3.2" ry="1.4" transform="rotate(35 72 21)"/>
+        <path d="M42 78 L50 76 L58 78 L54 82 L50 80 L46 82 Z"/>
+      </g>
+      <text x="50" y="92" text-anchor="middle" font-family="'Playfair Display',serif" font-size="6.5" font-weight="600" letter-spacing="1.2" fill="#d4b054">AVUKAT</text>
+    </svg>
+    <div class="logo-text">
+      <span class="title">Mücahit Çelik</span>
+      <span class="subtitle">Hukuk Bürosu · Antalya</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('anasayfa')" id="nav-anasayfa" class="active">Anasayfa</a></li>
+    <li><a onclick="showPage('kurumsal')" id="nav-kurumsal">Kurumsal</a></li>
+    <li><a onclick="showPage('ceza')" id="nav-ceza">Ceza Hukuku</a></li>
+    <li><a onclick="showPage('aile')" id="nav-aile">Aile Hukuku</a></li>
+    <li><a onclick="showPage('idare')" id="nav-idare">İdare Hukuku</a></li>
+    <li><a onclick="showPage('blog')" id="nav-blog">Blog</a></li>
+    <li><a onclick="showPage('iletisim')" id="nav-iletisim">İletişim</a></li>
+    <li><a onclick="showPage('etahsilat')" id="nav-etahsilat">E-Tahsilat</a></li>
+  </ul>
+  <button class="nav-cta" onclick="showPage('etahsilat')">Online Ödeme</button>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('anasayfa');closeMenu()" id="mnav-anasayfa" class="active">Anasayfa</a>
+  <a onclick="showPage('kurumsal');closeMenu()" id="mnav-kurumsal">Kurumsal</a>
+  <a onclick="showPage('ceza');closeMenu()" id="mnav-ceza">Ceza Hukuku</a>
+  <a onclick="showPage('aile');closeMenu()" id="mnav-aile">Aile Hukuku</a>
+  <a onclick="showPage('idare');closeMenu()" id="mnav-idare">İdare Hukuku</a>
+  <a onclick="showPage('blog');closeMenu()" id="mnav-blog">Blog</a>
+  <a onclick="showPage('iletisim');closeMenu()" id="mnav-iletisim">İletişim</a>
+  <a onclick="showPage('etahsilat');closeMenu()" id="mnav-etahsilat">E-Tahsilat</a>
+</div>
+
+<!-- ─────────── ANASAYFA ─────────── -->
+<div class="page active" id="page-anasayfa">
+  <section class="hero">
+    <div class="hero-badge">Antalya Hukuk Bürosu</div>
+    <h1>Avukat<br><em>Mücahit Çelik</em></h1>
+    <p class="hero-sub">Kızılkaya Hukuk Bürosu, Antalya'da ceza, aile ve idare hukuku alanlarında profesyonel avukatlık ve danışmanlık hizmeti sunmaktadır.</p>
+    <div class="btn-row">
+      <button class="hero-btn" onclick="showPage('iletisim')">Randevu için Tıklayınız</button>
+      <button class="hero-btn secondary" onclick="showPage('etahsilat')">Online Ödeme</button>
+    </div>
+  </section>
+
+  <div class="ornament">◆ ◦ ◆</div>
+
+  <div class="section">
+    <div class="section-label">Hizmet Alanlarımız</div>
+    <div class="section-title">Çalışma Alanları</div>
+    <div class="services-grid">
+      <div class="svc-card" onclick="showPage('ceza')">
+        <div class="svc-tag">Ceza Hukuku</div>
+        <h3>Antalya Ağır Ceza Avukatı</h3>
+        <p>Soruşturma, kovuşturma ve infaz aşamasına kadar gereksinim duyulan avukatlık ve danışmanlık hizmeti sunulmaktadır.</p>
+        <span class="svc-link">Detaylı Bilgi →</span>
+      </div>
+      <div class="svc-card" onclick="showPage('idare')">
+        <div class="svc-tag">İdare Hukuku</div>
+        <h3>İdari Davalar</h3>
+        <p>İptal davaları, tam yargı davaları ve idari sözleşmelerden kaynaklanan davalarda avukatlık ve danışmanlık hizmeti verilmektedir.</p>
+        <span class="svc-link">Detaylı Bilgi →</span>
+      </div>
+      <div class="svc-card" onclick="showPage('aile')">
+        <div class="svc-tag">Aile Hukuku</div>
+        <h3>Boşanma ve Aile Davaları</h3>
+        <p>Boşanma davaları, nafaka, velayet, kişisel ilişki kurulması, mal rejiminin tasfiyesi davalarında avukatlık ve danışmanlık hizmeti verilmektedir.</p>
+        <span class="svc-link">Detaylı Bilgi →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Müvekkil Memnuniyeti</div>
+    <div class="section-title">Google Yorumları</div>
+    <div class="reviews-wrap">
+      <div class="reviews-summary">
+        <div class="reviews-summary-label">MÜKEMMEL</div>
+        <div class="stars-row" aria-label="5 yıldız">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="reviews-count" id="reviews-count-text">6 değerlendirmeye göre.</div>
+        <a class="google-logo" href="https://www.google.com/maps?cid=13087429158419352344" target="_blank" rel="noopener" aria-label="Google'da görüntüle">
+          <svg viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+            <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+            <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+            <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+            <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+            <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="reviews-carousel">
+        <button class="rev-arrow rev-prev" onclick="scrollReviews(-1)" aria-label="Önceki">‹</button>
+        <div class="reviews-track" id="reviews-track">
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar">D</div>
+                <div class="review-info"><div class="review-name">Deniz Aksoy</div><div class="review-date">1 hafta önce <span class="review-new-badge">YENİ</span></div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="review-text">Sadece bir avukat değil, aynı zamanda güven veren bir yol göstericisiniz.</p>
+            <a class="review-more" href="https://www.google.com/maps?cid=13087429158419352344" target="_blank" rel="noopener">Daha fazla oku</a>
+          </div>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar">M</div>
+                <div class="review-info"><div class="review-name">Mesut Dursun</div><div class="review-date">1 ay önce</div><div class="review-local-guide">Yerel Rehber</div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar" style="background:#f4511e;color:#fff">F</div>
+                <div class="review-info"><div class="review-name">Furkan Bayık</div><div class="review-date">3 ay önce</div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar">A</div>
+                <div class="review-info"><div class="review-name">Aysu Coşkun</div><div class="review-date">3 ay önce</div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar" style="background:#1a73e8;color:#fff">T</div>
+                <div class="review-info"><div class="review-name">Taylan Ünal</div><div class="review-date">3 ay önce</div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="review-user">
+                <div class="review-avatar">S</div>
+                <div class="review-info"><div class="review-name">Sena Doymuş</div><div class="review-date">3 ay önce</div></div>
+              </div>
+              <svg class="review-google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </div>
+            <div class="review-stars-row">
+              <div class="stars-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <svg class="review-verified" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <button class="rev-arrow rev-next" onclick="scrollReviews(1)" aria-label="Sonraki">›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-strip">
+    <div class="about-img-placeholder">
+      <img src="avukat.jpg.png" alt="Av. Mücahit Çelik" style="width:100%;height:100%;object-fit:cover;border-radius:3px">
+    </div>
+    <div>
+      <div class="about-label">Av. Mücahit Çelik</div>
+      <div class="about-title">Hakkımızda</div>
+      <div class="about-body">
+        <p>Avukat Mücahit Çelik, Antalya Barosu'na bağlı olarak kurucu ortağı olduğu Kızılkaya Hukuk Bürosu'nda Özel ve Ceza Hukuku alanlarında serbest avukat olarak çalışmaktadır.</p>
+        <p>Hukuki süreçlerin her aşamasında müvekkillerine profesyonel destek sunarak haklarını en etkin biçimde koruyan Av. Mücahit Çelik, alanındaki derin bilgi birikimi ve deneyimiyle güvenilir bir hukuki çözüm ortağıdır.</p>
+      </div>
+      <br>
+      <button class="hero-btn" onclick="showPage('kurumsal')" style="font-size:11px;padding:12px 28px">Daha Fazla Bilgi</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Güncel İçerikler</div>
+    <div class="section-title">Hukuki Makaleler</div>
+    <div class="blog-grid">
+      <div class="blog-card" onclick="showPage('blog')">
+        <div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
+        <div class="blog-meta">
+          <div class="blog-cat">Ceza Hukuku</div>
+          <h4>Verileri Hukuka Aykırı Olarak Verme veya Ele Geçirme Suçu (TCK 136)</h4>
+          <p>Kişisel verilerin korunması hakkını ihlal eden bu suç tipi ve hukuki sonuçları hakkında kapsamlı bir değerlendirme.</p>
+          <div class="blog-author">Av. Mücahit Çelik</div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showPage('blog')">
+        <div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
+        <div class="blog-meta">
+          <div class="blog-cat">Ceza Hukuku</div>
+          <h4>Kişisel Verilerin Kaydedilmesi Suçu (TCK 135)</h4>
+          <p>Bireyin kimliğini belirli veya belirlenebilir kılan bilgilerin hukuka aykırı kayıt altına alınması ve yaptırımları.</p>
+          <div class="blog-author">Av. Mücahit Çelik</div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showPage('blog')">
+        <div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div>
+        <div class="blog-meta">
+          <div class="blog-cat">İdare Hukuku</div>
+          <h4>Pasaport Tahdidinin İptali</h4>
+          <p>Pasaport tahdidi işlemi nedir? Bir kimsenin yurt dışına çıkmasını engelleyen idari işlemin iptali yolları.</p>
+          <div class="blog-author">Av. Mücahit Çelik</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-band">
+    <div class="info-col">
+      <div class="info-label-f">Adres</div>
+      <p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p>
+    </div>
+    <div class="info-divider"></div>
+    <div class="info-col">
+      <div class="info-label-f">İletişim</div>
+      <a href="tel:+902422441066">(0242) 244 10 66</a>
+      <a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a>
+    </div>
+    <div class="info-divider"></div>
+    <div class="info-col">
+      <div class="info-label-f">Online Ödeme</div>
+      <p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli bir şekilde yapabilirsiniz.</p>
+      <a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a>
+    </div>
+  </div>
+  <footer>
+    <p>©2024 Avukat Mücahit Çelik. Bu sitede yer alan tüm bilgiler ve tüm fikri mülkiyet hakları Av. Mücahit Çelik'e aittir.</p>
+    <div class="flinks">
+      <a onclick="showPage('iletisim')">İletişim</a>
+      <a onclick="showPage('etahsilat')">E-Tahsilat</a>
+      <a onclick="showPage('kurumsal')">Kurumsal</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ─────────── KURUMSAL ─────────── -->
+<div class="page" id="page-kurumsal">
+  <div class="page-header">
+    <div class="section-label">Kızılkaya Hukuk Bürosu</div>
+    <h1>Kurumsal</h1>
+    <p>Av. Mücahit Çelik hakkında ve büronun çalışma alanları.</p>
+  </div>
+  <div class="section">
+    <div class="section-label">Avukat</div>
+    <div class="section-title">Mücahit Çelik</div>
+    <div class="kurumsal-grid">
+      <div class="kurumsal-bio">
+        <p>Avukat Mücahit Çelik, Antalya Barosu'na bağlı olarak kurucu ortağı olduğu Kızılkaya Hukuk Bürosu'nda Ceza Hukuku ve İdare Hukuku alanlarında serbest avukat olarak çalışmaktadır.</p>
+        <p>Lisans eğitimini hukuk fakültesinde tamamlayan Av. Mücahit Çelik, üniversite yılları içerisinde İş Hukuku, İcra İflas Hukuku ve Ceza Hukuku alanlarında staj yapmıştır. Yasal avukatlık stajını Ceza Hukuku ve İdare Hukuku üzerine çalışan ofislerde tamamlamıştır.</p>
+        <p>Müvekkillerine her zaman dürüst, şeffaf ve çözüm odaklı bir hizmet sunmayı ilke edinen Av. Mücahit Çelik, hukuki süreçlerin her aşamasında yanınızda olmaktadır.</p>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:14px">Çalışma Alanları</div>
+        <div class="alanlar-list">
+          <div class="alan-item" onclick="showPage('idare')">
+            <h3>İdare Hukuku</h3>
+            <p>İdare hukuku, genel hukuktan farklılıkları olan kamu tüzel kişilerinin faaliyetlerini düzenlemek için var olan kuralların bütünüdür. İptal davaları, tam yargı davaları ve idari sözleşmelerden kaynaklanan davalarda hizmet verilmektedir.</p>
+          </div>
+          <div class="alan-item" onclick="showPage('ceza')">
+            <h3>Ceza Hukuku</h3>
+            <p>Ceza hukuku, bireylerin ve toplumun güvenliğini sağlamak amacıyla suç ve ceza kavramlarını düzenleyen bir hukuk dalıdır. Soruşturma, kovuşturma ve infaz aşamasına kadar gereksinim duyulan tüm avukatlık hizmetleri sunulmaktadır.</p>
+          </div>
+          <div class="alan-item" onclick="showPage('aile')">
+            <h3>Aile Hukuku</h3>
+            <p>Boşanma davaları, nafaka, velayet, kişisel ilişki kurulması, mal rejiminin tasfiyesi davalarında avukatlık ve danışmanlık hizmeti verilmektedir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── CEZA HUKUKU ─────────── -->
+<div class="page" id="page-ceza">
+  <div class="page-header">
+    <div class="section-label">Antalya Ağır Ceza Avukatı</div>
+    <h1>Ceza Hukuku</h1>
+    <p>Türk Ceza Hukuku ve Ceza Avukatının Görevleri hakkında kapsamlı bilgi.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Ceza hukuku, bireylerin ve toplumun güvenliğini sağlamak amacıyla suç ve ceza kavramlarını düzenleyen bir hukuk dalıdır. Türkiye'de ceza hukuku, 5237 sayılı Türk Ceza Kanunu (TCK) başta olmak üzere, Ceza Muhakemesi Kanunu (CMK) ve diğer ilgili mevzuat ile düzenlenmektedir.</p>
+      <h2>Türk Ceza Hukuku Nedir?</h2>
+      <p>Türk ceza hukuku, kamu düzenini ve birey haklarını korumak amacıyla suç olarak tanımlanan fiillerin neler olduğunu ve bu fiillerin karşılığında uygulanacak yaptırımları belirleyen bir hukuk dalıdır. Ceza hukuku, iki ana alt dala ayrılır:</p>
+      <ol>
+        <li><strong>Maddi Ceza Hukuku:</strong> Suç ve ceza kavramlarını belirleyen, hangi fiillerin suç sayıldığını ve hangi cezaların uygulanacağını düzenleyen kurallar bütünüdür.</li>
+        <li><strong>Şekli Ceza Hukuku (Ceza Muhakemesi Hukuku):</strong> Suç şüphesi altında bulunan bireylerin nasıl yargılanacağı, hangi delillerin kullanılacağı ve mahkemelerin işleyişi gibi konuları düzenler.</li>
+      </ol>
+      <p>Türk ceza hukukunun temel ilkeleri arasında <strong>kanunilik</strong>, <strong>suçta ve cezada orantılılık</strong>, <strong>kusur ilkesi</strong>, <strong>şahsi sorumluluk</strong> ve <strong>masumiyet karinesi</strong> gibi prensipler bulunur.</p>
+      <hr>
+      <h2>Türkiye'de Ceza Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>Müvekkil Savunması</h4><p>Suç isnadıyla karşı karşıya kalan kişilerin haklarını en iyi şekilde korumak, adil bir yargılama sürecinden geçmesini sağlamak.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Soruşturma Aşamasında Hukuki Destek</h4><p>Şüpheli veya sanık durumundaki bireylerin, gözaltı ve ifade alma süreçlerinde hukuki destek sağlamak.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Mahkeme Sürecinin Takibi</h4><p>Delil sunmak, tanıkları sorgulamak ve mahkemede etkili savunma yaparak müvekkilin haklarını korumak.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Tutukluluk ve Tahliye Talepleri</h4><p>Haksız tutukluluğa karşı itiraz etmek ve tahliye taleplerinde bulunmak.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Mağdur ve Müşteki Vekiliği</h4><p>Suç mağdurlarının haklarını savunmak ve onlara hukuki destek sağlamak.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">6</div><div><h4>Ceza İnfaz Hukuku Danışmanlığı</h4><p>Mahkûmiyet sonrası infaz sürecinde müvekkile rehberlik etmek, hukuki destek sunmak.</p></div></div>
+      </div>
+      <hr>
+      <h2>Türk Ceza Kanunundaki Suç Tipleri</h2>
+      <p>Türk Ceza Kanunu'nda suçlar, topluma ve bireylere karşı işlenen fiillere göre sınıflandırılmıştır. Kanunda düzenlenen başlıca suç tipleri:</p>
+      <div class="suclar-grid">
+        <div class="suc-grup"><h4>Hayata Karşı Suçlar</h4><ul><li>Madde 81 – Kasten öldürme</li><li>Madde 82 – Nitelikli kasten öldürme</li><li>Madde 83 – İhmali davranışla öldürme</li><li>Madde 85 – Taksirle öldürme</li></ul></div>
+        <div class="suc-grup"><h4>Vücut Dokunulmazlığı</h4><ul><li>Madde 86 – Kasten yaralama</li><li>Madde 87 – Ağırlaşmış yaralama</li><li>Madde 88 – Taksirle yaralama</li><li>Madde 89 – İhmali yaralama</li></ul></div>
+        <div class="suc-grup"><h4>Malvarlığına Karşı</h4><ul><li>Madde 141 – Hırsızlık</li><li>Madde 142 – Nitelikli hırsızlık</li><li>Madde 148 – Yağma (gasp)</li><li>Madde 155 – Güveni kötüye kullanma</li><li>Madde 158 – Nitelikli dolandırıcılık</li></ul></div>
+        <div class="suc-grup"><h4>Cinsel Dokunulmazlık</h4><ul><li>Madde 102 – Cinsel saldırı</li><li>Madde 103 – Çocuğun cinsel istismarı</li><li>Madde 104 – Reşit olmayanla cinsel ilişki</li><li>Madde 105 – Cinsel taciz</li></ul></div>
+        <div class="suc-grup"><h4>Topluma Karşı Suçlar</h4><ul><li>Madde 179 – Trafik güvenliğini tehlikeye sokma</li><li>Madde 184 – İmar kirliliği</li><li>Madde 188 – Uyuşturucu imal ve ticareti</li><li>Madde 190 – Uyuşturucu kullanımını kolaylaştırma</li></ul></div>
+        <div class="suc-grup"><h4>Devlete Karşı Suçlar</h4><ul><li>Madde 302 – Ülke bütünlüğünü bozma</li><li>Madde 309 – Anayasayı ihlal</li><li>Madde 312 – Hükümete karşı suç</li><li>Madde 313 – Silahlı isyan</li><li>Madde 314 – Silahlı örgüt kurma</li></ul></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>Suç isnadı ile karşılaşan bireyler açısından özgürlük, itibar ve geleceğin korunması için uzman bir avukattan destek alınması hayati öneme sahiptir. <strong>Antalya Ağır Ceza Avukatı Mücahit Çelik</strong>, ağır ceza davaları, uyuşturucu suçları, hırsızlık, dolandırıcılık ve diğer tüm ceza yargılamalarında profesyonel çözümler sunmaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">Ceza Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── AİLE HUKUKU ─────────── -->
+<div class="page" id="page-aile">
+  <div class="page-header">
+    <div class="section-label">Antalya Boşanma Avukatı</div>
+    <h1>Aile Hukuku</h1>
+    <p>Velayet, Nafaka ve Mal Paylaşımı Davaları.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Boşanma süreci, yalnızca bir evliliğin sona ermesi değil; aynı zamanda tarafların ekonomik düzenini, sosyal yaşamını ve özellikle çocukların geleceğini doğrudan etkileyen önemli bir hukuki süreçtir. Bu nedenle boşanma davalarında doğru hukuki destek alınması, sürecin sağlıklı ilerlemesi ve hak kaybı yaşanmaması açısından büyük önem taşır.</p>
+      <p>Antalya'da boşanma davaları, <strong>Antalya Aile Mahkemelerinde</strong> görülen ve çoğu zaman velayet, nafaka, mal paylaşımı ve tazminat gibi birçok hukuki konuyu içeren kapsamlı davalardır.</p>
+      <h2>Boşanma Avukatı Nedir?</h2>
+      <p>Boşanma avukatı, aile hukuku alanında uzmanlaşmış ve evlilik birliğinin sona erdirilmesi sürecinde taraflara hukuki destek sağlayan avukattır. Boşanma davaları yalnızca evlilik birliğinin sona ermesi ile sınırlı değildir; aynı zamanda mal paylaşımı, nafaka, çocuk velayeti ve tazminat gibi birçok hukuki konuyu da kapsar.</p>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>Boşanma dilekçesinin hazırlanması</h4><p>Davanın hukuki stratejisine uygun, eksiksiz dilekçe hazırlığı ve mahkemeye sunumu.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Delillerin toplanması ve sunulması</h4><p>Davanın seyrini belirleyecek delillerin profesyonel olarak derlenmesi ve mahkemede sunulması.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Nafaka ve tazminat taleplerinin hazırlanması</h4><p>Müvekkilin haklarına uygun nafaka ve tazminat taleplerinin belirlenmesi ve takibi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Velayet ve kişisel ilişki düzenlemeleri</h4><p>Çocuğun üstün yararı gözetilerek velayet ve aile bireyleriyle ilişki düzenlemelerinin yapılması.</p></div></div>
+      </div>
+      <hr>
+      <h2>Anlaşmalı Boşanma Nedir?</h2>
+      <p>Anlaşmalı boşanma, eşlerin boşanma ve boşanmanın tüm hukuki sonuçları üzerinde anlaşması halinde açılan boşanma türüdür. Genellikle tek celsede sonuçlanabilir.</p>
+      <h3>Anlaşmalı boşanmanın şartları</h3>
+      <ul>
+        <li>Evliliğin en az <strong>1 yıl sürmüş olması</strong></li>
+        <li>Tarafların boşanma konusunda anlaşmış olması</li>
+        <li>Nafaka konusunda anlaşma</li>
+        <li>Mal paylaşımı konusunda anlaşma</li>
+        <li>Çocuk varsa velayet konusunda anlaşma</li>
+      </ul>
+      <hr>
+      <h2>Çekişmeli Boşanma Davaları</h2>
+      <p>Tarafların boşanma konusunda veya boşanmanın sonuçları üzerinde anlaşamaması durumunda çekişmeli boşanma davası açılır. Türk Medeni Kanunu'na göre boşanma sebepleri:</p>
+      <ul>
+        <li>Zina</li><li>Hayata kast veya kötü muamele</li><li>Onur kırıcı davranış</li><li>Terk</li>
+        <li>Suç işleme ve haysiyetsiz hayat sürme</li><li>Akıl hastalığı</li>
+        <li>Evlilik birliğinin temelinden sarsılması (şiddetli geçimsizlik)</li>
+      </ul>
+      <hr>
+      <h2>Boşanma Davasında Mal Paylaşımı</h2>
+      <p>Türk Medeni Kanunu'na göre yasal mal rejimi <strong>edinilmiş mallara katılma rejimidir</strong>. Evlilik süresince edinilen mallar paylaşılır, kişisel mallar paylaşım dışında kalır. Değerlendirilen mal türleri:</p>
+      <ul><li>Taşınmazlar (ev, arsa, iş yeri)</li><li>Banka hesapları</li><li>Araçlar</li><li>Yatırım hesapları</li><li>Ziynet eşyaları</li></ul>
+      <hr>
+      <h2>Boşanma Davalarında Nafaka Türleri</h2>
+      <div class="suclar-grid">
+        <div class="suc-grup"><h4>Tedbir Nafakası</h4><p style="font-size:13px;color:var(--mid);line-height:1.7;margin-top:4px">Boşanma davası devam ederken tarafların geçimini sağlamak amacıyla mahkeme tarafından verilen nafakadır.</p></div>
+        <div class="suc-grup"><h4>İştirak Nafakası</h4><p style="font-size:13px;color:var(--mid);line-height:1.7;margin-top:4px">Çocuğun bakım ve eğitim giderlerine katkı sağlamak amacıyla velayeti almayan ebeveyn tarafından ödenen nafakadır.</p></div>
+        <div class="suc-grup"><h4>Yoksulluk Nafakası</h4><p style="font-size:13px;color:var(--mid);line-height:1.7;margin-top:4px">Boşanma sonrası ekonomik olarak zor durumda kalacak eşe verilen nafakadır.</p></div>
+      </div>
+      <hr>
+      <h2>Çocuk Velayeti Nasıl Belirlenir?</h2>
+      <p>Mahkeme velayet konusunda karar verirken öncelikle <strong>çocuğun üstün yararını</strong> dikkate alır. Değerlendirilen kriterler:</p>
+      <ul><li>Çocuğun yaşı</li><li>Ebeveynlerin ekonomik durumu</li><li>Çocuğun eğitim durumu</li><li>Ebeveynlerin yaşam koşulları</li><li>Çocuğun psikolojik gelişimi</li></ul>
+      <hr>
+      <h2>Antalya'da Boşanma Davası Süreci Nasıl İşler?</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>İlk Görüşme ve Durum Analizi</h4><p>Mevcut hukuki durum analiz edilir, dava türü belirlenir, olası hukuki sonuçlar değerlendirilir.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Delil ve Belgelerin Toplanması</h4><p>Nüfus kayıt örnekleri, tapu kayıtları, banka hesap dökümleri, tanık beyanları gibi belgeler hazırlanır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Dava Dilekçesinin Hazırlanması</h4><p>Boşanma davası için gerekli dilekçe hazırlanarak mahkemeye sunulur.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Duruşma Süreci</h4><p>Tanıklar dinlenir, deliller incelenir, bilirkişi raporları hazırlanır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Mahkeme Kararı</h4><p>Mahkeme tüm delilleri değerlendirerek boşanma hakkında karar verir.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sıkça Sorulanlar</h2>
+      <div class="sss-list">
+        <div class="sss-item"><div class="sss-q" onclick="toggleSss(this)">Antalya'da boşanma davası ne kadar sürer?</div><div class="sss-a"><div class="sss-a-inner">Anlaşmalı boşanma davaları genellikle <strong>1–4 ay</strong> içinde sonuçlanabilir. Çekişmeli boşanma davaları ise davanın kapsamına göre <strong>6 ay ile 2 yıl</strong> arasında sürebilir.</div></div></div>
+        <div class="sss-item"><div class="sss-q" onclick="toggleSss(this)">Anlaşmalı boşanma için hangi belgeler gerekir?</div><div class="sss-a"><div class="sss-a-inner"><ul><li>Nüfus kayıt örneği</li><li>Kimlik belgeleri</li><li>Boşanma protokolü</li><li>Vekaletname (varsa)</li></ul></div></div></div>
+        <div class="sss-item"><div class="sss-q" onclick="toggleSss(this)">Boşanma davasında avukat zorunlu mu?</div><div class="sss-a"><div class="sss-a-inner">Boşanma davalarında avukat zorunlu değildir. Ancak hak kaybı yaşanmaması için deneyimli bir avukat ile çalışılması önerilir.</div></div></div>
+        <div class="sss-item"><div class="sss-q" onclick="toggleSss(this)">Avukatlık ücretleri nasıl belirlenir?</div><div class="sss-a"><div class="sss-a-inner">Avukatlık ücretleri, <strong>Türkiye Barolar Birliği Avukatlık Asgari Ücret Tarifesi</strong> ve davanın kapsamı dikkate alınarak belirlenir.</div></div></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:16px;font-style:italic">Yukarıda yer alan bilgiler yüzeysel bir değerlendirme olup mutlak sonuç değildir. Konu ile ilgili detaylı bilgi almak için bir avukata danışmanız tavsiye edilmektedir.</p>
+    </div>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── İDARE HUKUKU ─────────── -->
+<div class="page" id="page-idare">
+  <div class="page-header">
+    <div class="section-label">İdari Davalar</div>
+    <h1>İdare Hukuku</h1>
+    <p>Türk İdare Hukuku ve İdare Hukuku Alanında Avukatın Görevleri.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <h2>Türk İdare Hukuku Nedir?</h2>
+      <p>Türk idare hukuku, devletin idari yapısını, kamu kurum ve kuruluşlarının işleyişini ve bireylerle olan ilişkilerini düzenleyen hukuk dalıdır. Bu hukuk dalı, kamu hizmetlerinin yürütülmesi, idari kararların hukuka uygunluğu, kamu görevlilerinin sorumlulukları gibi konuları kapsar.</p>
+      <p>İdare hukuku, bireylerin kamu otoriteleri karşısında haklarını korumasını sağlamak amacıyla düzenlenmiştir ve bu alanda ortaya çıkan ihtilaflar idari yargı mercilerinde çözülmektedir.</p>
+      <hr>
+      <h2>İdare Hukuku Kapsamındaki Davalar Nelerdir?</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>İptal Davaları</h4><p>Hukuka aykırı olduğu düşünülen idari işlemlerin yürütmesinin durdurulması veya tamamen iptali için açılan davalardır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Tam Yargı Davaları</h4><p>Bir idari işlem veya eylem nedeniyle kişisel hakları zarar gören bireylerin tazminat taleplerine ilişkin davalardır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Kamu Görevlileriyle İlgili Davalar</h4><p>Atama, görevden alma, disiplin cezaları gibi konularla ilgili idari işlemlerin iptali veya tazminat talepleriyle ilgili davalardır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Kamulaştırma Davaları</h4><p>Devletin kamu yararı amacıyla kişisel taşınmazlara el koymasına ilişkin ihtilafların çözümü için açılan davalardır.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Belediye ve İmar Davaları</h4><p>İmar planları, ruhsat işlemleri, belediye kararları gibi yerel yönetimle ilgili idari işlemlerin hukuka uygunluğunun denetlenmesine ilişkin davalardır.</p></div></div>
+      </div>
+      <hr>
+      <h2>İdare Hukuku Alanında Avukatın Görevleri</h2>
+      <ul>
+        <li><strong>Danışmanlık hizmeti vermek:</strong> Bireylerin ve şirketlerin idari kurumlarla olan hukuki ilişkilerinde doğru adımlar atmalarını sağlamak için rehberlik etmek.</li>
+        <li><strong>Dava açmak ve takibini yapmak:</strong> Hukuka aykırı idari işlemlerle ilgili olarak iptal davası ve tam yargı davası açarak müvekkilin hakkını korumak.</li>
+        <li><strong>Tazminat taleplerini yönetmek:</strong> Kamu idaresinin hukuka aykırı işlemleri sonucunda müvekkilin maddi veya manevi zararının giderilmesi için hukuki süreç başlatmak.</li>
+        <li><strong>Yürütmeyi durdurma taleplerinde bulunmak:</strong> Müvekkil aleyhine hukuka aykırı bir idari işlem gerçekleştirildiğinde, bu işlemin uygulanmasının durdurulması için mahkemeye başvurmak.</li>
+        <li><strong>Kamulaştırma ve imar hukuku davalarını takip etmek:</strong> Kamulaştırma bedellerinin hakkaniyete uygun olması için hukuki süreçleri yönetmek ve belediyelerle ilgili ihtilaflarda müvekkilin haklarını savunmak.</li>
+      </ul>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>İdare hukuku, bireylerin devlet kurumlarıyla olan ilişkilerinde haklarını korumalarını sağlayan önemli bir hukuk dalıdır. Kamu idaresinin kararlarına karşı hukuki yollara başvurmak isteyen birey ve kurumlar, idare hukuku konusunda deneyimli avukatlardan destek alarak haklarını daha etkin bir şekilde savunabilirler.</p>
+      <p><strong>Avukat Mücahit Çelik</strong> tarafından iptal davaları, tam yargı davaları ve idari sözleşmelerden kaynaklanan davalarda gereksinim duyulan her türlü avukatlık ve danışmanlık hizmeti verilmektedir.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">İdare Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── BLOG ─────────── -->
+<div class="page" id="page-blog">
+  <div class="page-header">
+    <div class="section-label">Güncel İçerikler</div>
+    <h1>Hukuki Makaleler</h1>
+    <p>Ceza hukuku, idare hukuku ve aile hukuku alanlarında güncel makaleler.</p>
+  </div>
+  <div class="section">
+    <div class="blog-grid">
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Verileri Hukuka Aykırı Olarak Verme veya Ele Geçirme Suçu (TCK 136)</h4><p>Kişisel verilerin korunması hakkını ihlal eden, bu verilerin yayılmasını veya yetkisiz kişilere aktarılmasını suç olarak tanımlayan düzenlemenin kapsamlı incelemesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişisel Verilerin Kaydedilmesi Suçu (TCK 135)</h4><p>Bireyin kimliğini belirli veya belirlenebilir kılan her türlü bilginin hukuka aykırı olarak kayıt altına alınması suçunun incelenmesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Özel Hayatın Gizliliğini İhlal Suçu (TCK 134)</h4><p>Bireyin sadece kendisine ait olan, başkaları tarafından bilinmesini istemediği yaşam alanının korunması.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişiler Arasındaki Konuşmaların Dinlenmesi ve Kayda Alınması Suçu (TCK 133)</h4><p>Bireylerin özel bir çaba ile gizli tutulan sözlü iletişimlerinin kayıt altına alınması suçu.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Haberleşmenin Gizliliğini İhlal Suçu (TCK 132)</h4><p>Bireylerin haberleşmesinin içeriğine üçüncü kişilerin hukuka aykırı şekilde müdahale etmesini engelleyen düzenlemenin analizi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişilerin Huzur ve Sükununu Bozma Suçu (TCK 123)</h4><p>Bireylerin psikolojik dinginliğini ve sükûnet içerisinde yaşama hakkını korumayı amaçlayan bu suç tipinin değerlendirilmesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Polisler ve Bekçiler için Fazla Çalışma Ücreti ve Yasal Faiz</h4><p>İdari disiplin soruşturmaları sonucu görevden uzaklaştırılmış memurlar için fazla çalışma ücreti ve yasal faiz hakkı.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Subay ve Astsubayların Zorunlu Hizmet Süreleri</h4><p>926 Sayılı Türk Silahlı Kuvvetleri Personel Kanunu kapsamında zorunlu hizmet sürelerine ilişkin kapsamlı bir değerlendirme.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Pasaport Tahdidinin İptali</h4><p>Bir kimsenin yurt dışına çıkmasını engellemek amacıyla idare tarafından tesis edilen işlemin iptali yolları.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+    </div>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── İLETİŞİM ─────────── -->
+<div class="page" id="page-iletisim">
+  <div class="page-header">
+    <div class="section-label">Bize Ulaşın</div>
+    <h1>İletişim</h1>
+    <p>Hukuki danışmanlık ve randevu için bizimle iletişime geçebilirsiniz.</p>
+  </div>
+  <div class="section">
+    <div style="font-size:22px;font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:32px">Bize Ulaşın</div>
+    <div class="iletisim-grid">
+      <div class="iletisim-card">
+        <h3>İletişim Bilgilerimiz</h3>
+        <div class="iletisim-row">
+          <div class="iletisim-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div><div class="lbl">Sabit Telefon</div><div class="val"><a href="tel:+902422441066">(0242) 244 10 66</a></div></div>
+        </div>
+        <div class="iletisim-row">
+          <div class="iletisim-icon"><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.2c.27-.27.35-.67.24-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg></div>
+          <div><div class="lbl">Cep / WhatsApp</div><div class="val"><a href="tel:+905070096194">+90 507 009 61 94</a></div></div>
+        </div>
+        <div class="iletisim-row">
+          <div class="iletisim-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div><div class="lbl">E-Posta</div><div class="val"><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div></div>
+        </div>
+        <div class="iletisim-row">
+          <div class="iletisim-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div><div class="lbl">Adres</div><div class="val">Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</div></div>
+        </div>
+        <div class="iletisim-row">
+          <div class="iletisim-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div><div class="lbl">Randevu</div><div class="val"><button class="wa-btn" onclick="window.open('https://wa.me/905070096194','_blank')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp'tan Randevu Al</button></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="iletisim-card">
+          <h3>Çalışma Saatleri</h3>
+          <div style="font-size:14px;color:var(--mid)">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border2);padding:8px 0"><span>Pazartesi – Cuma</span><span style="color:var(--gold);font-weight:600">09:00 – 18:00</span></div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border2);padding:8px 0"><span>Cumartesi</span><span style="color:var(--muted)">Randevuyla</span></div>
+            <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Pazar</span><span style="color:var(--muted)">Kapalı</span></div>
+          </div>
+        </div>
+        <div style="margin-top:20px;border:1px solid var(--border);border-radius:3px;overflow:hidden;height:280px">
+          <iframe src="https://maps.google.com/maps?q=Toros%20Mahallesi%20Atat%C3%BCrk%20Bulvar%C4%B1%20Ba%C5%9Fak%20Apt%20No%3A11%20Konyaalt%C4%B1%20Antalya&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div style="background:var(--dark-mid);padding:10px 14px;font-size:12px;color:var(--gold-light);text-align:center">
+            <a href="https://www.google.com/maps/place/Toros,+Atat%C3%BCrk+Blv.+Ba%C5%9Fak+Apt+No:11+Kat:4+No:52,+07070+Konyaalt%C4%B1%2FAntalya/@36.8839,30.6644,17z/data=!4m2!3m1!1s0x14c391a17aa73bf3:0xb59fe37abaaccb18" target="_blank" style="color:var(--gold-light);text-decoration:none">📍 Google Haritalar'da Aç</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── E-TAHSİLAT ─────────── -->
+<div class="page" id="page-etahsilat">
+  <div class="etahsilat-hero">
+    <div class="section-label" style="margin-bottom:14px">Güvenli &amp; Hızlı</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);color:var(--white);margin-bottom:16px">E-Tahsilat Sistemi</div>
+    <p style="font-size:14px;color:#7a7470;max-width:560px;margin:0 auto 32px;font-weight:300">Ödemelerinizi kredi kartıyla tek çekim veya taksitle güvenli biçimde gerçekleştirin. Türk Elektronik Para ve Ödeme Sistemleri altyapısıyla korunmaktadır.</p>
+    <button class="pay-btn" onclick="window.open('https://pos.param.com.tr/','_blank')">Av. Mücahit Çelik – Ödeme Yapın</button>
+    <div class="pay-hint">Ödeme yapmak için yukarıdaki butona tıklayınız</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Sistem Hakkında</div>
+    <div class="section-title">E-Tahsilat Sistemi Nedir?</div>
+    <div class="section-body">
+      <p>E-Tahsilat sistemi, avukatlık hizmetleri ve yargı süreçleriyle ilgili ödemelerin kredi kartıyla güvenli bir şekilde gerçekleştirilmesini sağlayan bir ödeme platformudur. Bu sistem, müvekkillerin dava ve dosya borçlarını, masraf ödemelerini, avukatlık ücretlerini ve diğer yargı giderlerini kolayca ödemelerine olanak tanır.</p>
+      <p>E-Tahsilat sistemi, <strong>TÜRK Elektronik Para ve Ödeme Sistemleri</strong> güvencesiyle çalışmaktadır. Sistem üzerinden ödemelerinizi tek seferde veya taksitlendirme seçenekleriyle yapabilirsiniz. Taksit ve komisyon oranları, kullanacağınız kredi kartına göre değişiklik göstermektedir.</p>
+    </div>
+    <div class="logos-row">
+      <div class="logo-pill">World</div>
+      <div class="logo-pill">Bonus</div>
+      <div class="logo-pill">Axess</div>
+      <div class="logo-pill">Paraf</div>
+      <div class="logo-pill">Maximum</div>
+      <div class="logo-pill">CardFinans</div>
+      <div class="logo-pill secure-pill">🔒 3D Secure</div>
+    </div>
+  </div>
+
+  <div style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="section">
+      <div class="section-label">Neden E-Tahsilat?</div>
+      <div class="section-title">E-Tahsilat Sisteminin Avantajları</div>
+      <div class="avantaj-grid">
+        <div class="avantaj-card"><div class="avantaj-num">01</div><h3>Güvenlik</h3><p>E-Tahsilat sistemi, ödemelerinizi güvenli bir şekilde gerçekleştirmenizi sağlar. 3D güvenlik uygulaması ve TÜRK Elektronik Para ve Ödeme Sistemleri güvencesiyle ödeme işlemleriniz koruma altındadır.</p></div>
+        <div class="avantaj-card"><div class="avantaj-num">02</div><h3>Hız ve Pratiklik</h3><p>Ödemelerinizi internet üzerinden hızlı bir şekilde tamamlayabilirsiniz. Banka şubelerine gitmenize veya EFT/havale işlemleriyle uğraşmanıza gerek kalmaz.</p></div>
+        <div class="avantaj-card"><div class="avantaj-num">03</div><h3>Taksit Seçenekleri</h3><p>E-Tahsilat sistemi, kredi kartınıza uygun taksitlendirme seçenekleri sunar. Bu sayede, ödemelerinizi daha esnek bir şekilde yönetebilirsiniz.</p></div>
+        <div class="avantaj-card"><div class="avantaj-num">04</div><h3>Şeffaflık</h3><p>Yapılan ödemeler, avukat ve müvekkil arasında şeffaf bir finansal ilişki sağlar. Ödeme bilgileri anında kaydedilir ve takibi kolaydır.</p></div>
+        <div class="avantaj-card"><div class="avantaj-num">05</div><h3>7/24 Erişim</h3><p>E-Tahsilat sistemi, internet üzerinden 7 gün 24 saat erişilebilir olduğu için ödemelerinizi dilediğiniz zaman gerçekleştirebilirsiniz.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Adım Adım Kılavuz</div>
+    <div class="section-title">E-Tahsilat Sistemi Nasıl Kullanılır?</div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:8px">E-Tahsilat sistemi, kullanımı oldukça kolay ve kullanıcı dostu bir platformdur. Ödeme yapmak için aşağıdaki adımları takip edebilirsiniz:</p>
+    <div class="steps-list">
+      <div class="step-row"><div class="step-n">1</div><div><h4>E-Tahsilat Bağlantısına Tıklayın</h4><p>Sitemizde yer alan E-Tahsilat bağlantısına tıklayarak ödeme sayfasına ulaşın.</p></div></div>
+      <div class="step-row"><div class="step-n">2</div><div><h4>Bilgilerinizi Girin</h4><p>Ödeme yapacağınız dosya veya dava ile ilgili bilgileri ilgili alanlara girin.</p></div></div>
+      <div class="step-row"><div class="step-n">3</div><div><h4>Taksit Seçeneğini Belirleyin</h4><p>Kredi kartınıza uygun taksit seçeneğini seçin. Taksit ve komisyon oranları, kullanacağınız kredi kartına göre değişiklik göstermektedir.</p></div></div>
+      <div class="step-row"><div class="step-n">4</div><div><h4>Ödemeyi Tamamlayın</h4><p>Kart bilgilerinizi girerek ödemenizi güvenle tamamlayın.</p></div></div>
+    </div>
+
+    <div class="dark-cta-box">
+      <div class="dlab">Kızılkaya Hukuk Bürosu ve E-Tahsilat</div>
+      <p>Kızılkaya Hukuk Bürosu olarak, müvekkillerimize en güvenli ve hızlı ödeme yöntemlerini sunmayı hedefliyoruz. E-Tahsilat sistemi ile ödemelerinizi kolayca gerçekleştirebilir, hukuki süreçlerinizi daha pratik bir şekilde yönetebilirsiniz. Ödeme süreçleriyle ilgili her türlü soru veya destek talebi için <strong style="color:var(--gold-light)">(0242) 244 10 66</strong> numaralı telefondan veya <strong style="color:var(--gold-light)">mucahitcelik@ankara.av.tr</strong> e-posta adresimizden bize ulaşabilirsiniz.</p>
+      <button class="pay-btn" onclick="window.open('https://pos.param.com.tr/','_blank')" style="font-size:13px;padding:16px 40px">Online Ödeme Yap</button>
+    </div>
+  </div>
+
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelik@ankara.av.tr">mucahitcelik@ankara.av.tr</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli bir şekilde yapabilirsiniz.</p><a class="online-pay-link" onclick="window.open('https://pos.param.com.tr/','_blank')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Bu sitede yer alan tüm bilgiler ve tüm fikri mülkiyet hakları Av. Mücahit Çelik'e aittir.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('anasayfa')">Anasayfa</a></div></footer>
+</div>
+
+<a href="tel:+905070096194" class="call-float" title="Telefon ile arama">
+  <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+</a>
+<a href="https://wa.me/905070096194" class="wa-float" title="WhatsApp ile iletişim" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const pages=['anasayfa','kurumsal','ceza','aile','idare','blog','iletisim','etahsilat'];
+function showPage(id){
+  pages.forEach(p=>{
+    document.getElementById('page-'+p).classList.toggle('active',p===id);
+    const n=document.getElementById('nav-'+p);
+    const m=document.getElementById('mnav-'+p);
+    if(n)n.classList.toggle('active',p===id);
+    if(m)m.classList.toggle('active',p===id);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+function toggleSss(el){el.parentElement.classList.toggle('open')}
+function scrollReviews(dir){
+  const track=document.getElementById('reviews-track');
+  if(!track)return;
+  const card=track.querySelector('.review-card');
+  if(!card)return;
+  const step=card.offsetWidth+18;
+  track.scrollBy({left:dir*step,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

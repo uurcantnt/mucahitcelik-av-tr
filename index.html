@@ -144,9 +144,11 @@ nav{position:sticky;top:0;z-index:1000;background:var(--dark);border-bottom:1px 
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px}
 .blog-card{background:var(--white);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:box-shadow 0.2s;cursor:pointer}
 .blog-card:hover{box-shadow:0 4px 24px rgba(184,151,58,0.12)}
-.blog-thumb{width:100%;height:150px;background:var(--dark-mid);display:flex;align-items:center;justify-content:center;color:var(--gold)}
-.blog-thumb svg{width:54px;height:54px;opacity:0.85}
+.blog-thumb{width:100%;height:170px;background:linear-gradient(135deg,var(--dark) 0%,var(--dark-mid) 60%,#3a3424 100%);display:flex;align-items:center;justify-content:center;color:var(--gold-light);position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.blog-thumb::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0,transparent 20px,rgba(184,151,58,0.04) 20px,rgba(184,151,58,0.04) 21px);pointer-events:none}
+.blog-thumb svg{width:78px;height:78px;position:relative;z-index:1;opacity:0.95;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4))}
 a.blog-card{text-decoration:none;color:inherit;display:block}
+a.blog-card:hover .blog-thumb{background:linear-gradient(135deg,var(--dark-mid) 0%,#3a3424 100%)}
 .blog-meta{padding:18px}
 .blog-cat{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .blog-card h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.4;margin-bottom:8px}
@@ -1580,7 +1582,10 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
 
 <script>
 const pages=['anasayfa','kurumsal','hizmetler','ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar','blog','iletisim','etahsilat'];
-function showPage(id){
+const serviceDetailPages=['ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar'];
+function showPage(id,push){
+  if(push===undefined)push=true;
+  if(!pages.includes(id))id='anasayfa';
   pages.forEach(p=>{
     document.getElementById('page-'+p).classList.toggle('active',p===id);
     const n=document.getElementById('nav-'+p);
@@ -1588,8 +1593,30 @@ function showPage(id){
     if(n)n.classList.toggle('active',p===id);
     if(m)m.classList.toggle('active',p===id);
   });
+  if(serviceDetailPages.includes(id)){
+    const navH=document.getElementById('nav-hizmetler');
+    const mnavH=document.getElementById('mnav-hizmetler');
+    if(navH)navH.classList.add('active');
+    if(mnavH)mnavH.classList.add('active');
+  }
   window.scrollTo({top:0,behavior:'smooth'});
+  if(push){
+    const url=id==='anasayfa'?location.pathname:'#'+id;
+    history.pushState({page:id},'',url);
+  }
 }
+window.addEventListener('popstate',function(e){
+  const id=(e.state&&e.state.page)||location.hash.slice(1)||'anasayfa';
+  showPage(id,false);
+});
+(function(){
+  const initial=location.hash.slice(1);
+  if(initial&&pages.includes(initial)){
+    showPage(initial,false);
+  }else{
+    history.replaceState({page:'anasayfa'},'',location.pathname);
+  }
+})();
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 function toggleSss(el){el.parentElement.classList.toggle('open')}

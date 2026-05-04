@@ -144,8 +144,9 @@ nav{position:sticky;top:0;z-index:1000;background:var(--dark);border-bottom:1px 
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px}
 .blog-card{background:var(--white);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:box-shadow 0.2s;cursor:pointer}
 .blog-card:hover{box-shadow:0 4px 24px rgba(184,151,58,0.12)}
-.blog-thumb{width:100%;height:150px;background:var(--dark-mid);display:flex;align-items:center;justify-content:center}
-.blog-thumb svg{opacity:0.18;width:44px;height:44px;fill:var(--gold)}
+.blog-thumb{width:100%;height:150px;background:var(--dark-mid);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.blog-thumb svg{width:54px;height:54px;opacity:0.85}
+a.blog-card{text-decoration:none;color:inherit;display:block}
 .blog-meta{padding:18px}
 .blog-cat{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .blog-card h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);line-height:1.4;margin-bottom:8px}
@@ -850,7 +851,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>Mobbing (Psikolojik Taciz) Davaları</li>
           <li>Hizmet Tespiti (Sigortasız Çalıştırma)</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('is')">Detaylı Bilgi →</a>
       </div>
 
       <div class="hizmet-card">
@@ -864,7 +865,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>İzale-i Şüyu (Ortaklığın Giderilmesi)</li>
           <li>Kat Karşılığı İnşaat Sözleşmeleri</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('gayrimenkul')">Detaylı Bilgi →</a>
       </div>
 
       <div class="hizmet-card">
@@ -906,7 +907,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>Çek ve Senet (Kambiyo) Takipleri</li>
           <li>İtirazın İptali Davaları</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('icra')">Detaylı Bilgi →</a>
       </div>
 
       <div class="hizmet-card">
@@ -918,7 +919,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>Araç Değer Kaybı Başvuruları</li>
           <li>Ayıplı Mal ve Hizmet Davaları</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('tuketici')">Detaylı Bilgi →</a>
       </div>
 
       <div class="hizmet-card">
@@ -931,7 +932,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>Ortaklık Anlaşmazlıkları</li>
           <li>Ticari Dava Takibi</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('ticaret')">Detaylı Bilgi →</a>
       </div>
 
       <div class="hizmet-card">
@@ -946,7 +947,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
           <li>Yabancıların Gayrimenkul Alım Satımı</li>
           <li>Tanıma ve Tenfiz</li>
         </ul>
-        <a class="hizmet-btn" onclick="showPage('iletisim')">Detaylı Bilgi →</a>
+        <a class="hizmet-btn" onclick="showPage('yabancilar')">Detaylı Bilgi →</a>
       </div>
 
     </div>
@@ -1148,24 +1149,285 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
   <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
 </div>
 
+<!-- ─────────── İŞ HUKUKU ─────────── -->
+<div class="page" id="page-is">
+  <div class="page-header">
+    <div class="section-label">Antalya İşçi Hakları Avukatı</div>
+    <h1>İş Hukuku</h1>
+    <p>Kıdem, ihbar, işe iade ve mobbing davalarında profesyonel destek.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>İş hukuku, işçi ile işveren arasındaki bireysel ve toplu ilişkileri düzenleyen, çalışma hayatının temel kurallarını belirleyen hukuk dalıdır. Türkiye'de iş hukuku, başta 4857 sayılı İş Kanunu olmak üzere, Sendikalar ve Toplu İş Sözleşmesi Kanunu, İş Sağlığı ve Güvenliği Kanunu ile diğer ilgili mevzuat çerçevesinde düzenlenmektedir.</p>
+      <h2>Türk İş Hukuku Nedir?</h2>
+      <p>Türk iş hukuku, işçinin hem ekonomik hem de kişilik haklarını korumak amacıyla işçi-işveren ilişkilerinde dengenin sağlanmasını hedefleyen bir hukuk dalıdır. İşçinin daha zayıf konumda olduğu kabul edilerek, işçi lehine yorum (in dubio pro operario) ilkesi temel alınır.</p>
+      <p>İş hukukunun başlıca konuları şunlardır: <strong>iş sözleşmesinin kurulması ve sona ermesi</strong>, <strong>ücret</strong>, <strong>çalışma süreleri</strong>, <strong>yıllık izin</strong>, <strong>kıdem ve ihbar tazminatı</strong>, <strong>iş sağlığı ve güvenliği</strong>, <strong>sendikal haklar</strong> ve <strong>iş kazası tazminatları</strong>.</p>
+      <hr>
+      <h2>Türkiye'de İş Hukuku Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>İş Sözleşmesinin İncelenmesi ve Hazırlanması</h4><p>İşçi ve işverenin haklarını koruyan, hukuka uygun iş sözleşmelerinin hazırlanması ve denetlenmesi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Kıdem ve İhbar Tazminatı Davaları</h4><p>Haksız fesih durumlarında işçinin alacağı tazminatların hesaplanması ve mahkemede talep edilmesi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>İşe İade Davaları</h4><p>Geçersiz fesih hâlinde işçinin işe iadesi için açılan davaların takibi, arabuluculuk süreci yönetimi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Mobbing ve Psikolojik Taciz</h4><p>İşyerinde sistematik psikolojik baskıya uğrayan işçinin haklarının korunması ve tazminat talebi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>İşçi Alacakları (Fazla Mesai, Ücret)</h4><p>Ödenmeyen ücret, fazla mesai, hafta tatili ve UBGT ücretlerinin tahsili için dava süreçleri.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">6</div><div><h4>Hizmet Tespiti Davaları</h4><p>Sigortasız çalıştırılan işçilerin SGK karşısında çalıştığının tespiti için açılan davalar.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>İşçi hakları, kanuni süreler ve usul kurallarına sıkı şekilde tabi olduğundan profesyonel hukuki destek hayati önem taşır. <strong>Antalya İş Hukuku Avukatı Mücahit Çelik</strong>, kıdem-ihbar tazminatı, işe iade, mobbing ve işçi alacakları davalarında etkili çözümler sunmaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">İş Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── GAYRİMENKUL VE KİRA HUKUKU ─────────── -->
+<div class="page" id="page-gayrimenkul">
+  <div class="page-header">
+    <div class="section-label">Antalya Gayrimenkul Avukatı</div>
+    <h1>Gayrimenkul ve Kira Hukuku</h1>
+    <p>Tahliye, kira tespiti, tapu iptali ve imar uyuşmazlıklarında uzman destek.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Gayrimenkul ve kira hukuku, taşınmazlar üzerindeki ayni ve şahsi haklar ile bunlara ilişkin uyuşmazlıkların çözümünü düzenleyen hukuk dalıdır. Türk Medeni Kanunu, Türk Borçlar Kanunu (özellikle kira hükümleri), Tapu Kanunu, İmar Kanunu ve Kat Mülkiyeti Kanunu bu alanın temel mevzuatıdır.</p>
+      <h2>Türk Gayrimenkul Hukuku Nedir?</h2>
+      <p>Gayrimenkul hukuku; tapu iptal ve tescil davaları, izale-i şüyu (ortaklığın giderilmesi), önalım hakkı, müdahalenin men'i, ipotek ve kira sözleşmeleri gibi geniş bir uygulama alanına sahiptir. Antalya gibi yoğun gayrimenkul hareketinin olduğu şehirlerde bu alandaki uyuşmazlıklar büyük yer tutar.</p>
+      <p>Kira hukuku ise konut ve çatılı işyeri kiralarına özgü, kiracı ile kiraya veren arasındaki ilişkileri düzenler. Tahliye davaları, kira tespit davaları ve uyarlama davaları bu alanın temel davalarıdır.</p>
+      <hr>
+      <h2>Gayrimenkul ve Kira Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>Tahliye Davaları</h4><p>İhtiyaç, temerrüt veya yeniden inşa gibi sebeplerle tahliye davalarının açılması ve takibi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Kira Bedeli Tespit ve Uyarlama</h4><p>Güncel piyasa koşullarına göre kira bedelinin yeniden belirlenmesi için açılan davalar.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Tapu İptal ve Tescil Davaları</h4><p>Hukuka aykırı tapu kayıtlarının iptali ve gerçek hak sahibi adına tescili.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>İzale-i Şüyu (Ortaklığın Giderilmesi)</h4><p>Paylı veya elbirliği mülkiyetine konu taşınmazların satış yoluyla paylaştırılması.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Kat Karşılığı İnşaat Sözleşmeleri</h4><p>Arsa sahibi ile müteahhit arasındaki sözleşmelerin hazırlanması ve uyuşmazlık çözümü.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>Gayrimenkul, çoğu kişi için en değerli yatırımdır. Tapu, kira ve inşaat süreçlerinde olası riskleri öngörmek ve hak kaybını önlemek için <strong>Antalya Gayrimenkul Avukatı Mücahit Çelik</strong> profesyonel hukuki destek sağlamaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">Gayrimenkul Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── İCRA VE İFLAS HUKUKU ─────────── -->
+<div class="page" id="page-icra">
+  <div class="page-header">
+    <div class="section-label">Antalya İcra Avukatı</div>
+    <h1>İcra ve İflas Hukuku</h1>
+    <p>İcra takipleri, kambiyo işlemleri ve haciz süreçlerinde profesyonel takip.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>İcra ve iflas hukuku, alacakların devlet zoruyla tahsilini ve borçluların borçlarını ödeyememeleri durumunda izlenecek hukuki yolları düzenleyen hukuk dalıdır. Temel mevzuatı 2004 sayılı İcra ve İflas Kanunu (İİK) olup, ticari ilişkilerin sağlıklı işlemesi için kritik öneme sahiptir.</p>
+      <h2>Türk İcra ve İflas Hukuku Nedir?</h2>
+      <p>İcra hukuku, alacaklının alacağına devlet eliyle kavuşmasını sağlayan kurallar bütünüdür. İcra takipleri ilamlı (mahkeme kararına dayalı) ve ilamsız (belge dayalı) olmak üzere iki ana kola ayrılır. Kambiyo senetlerine (çek, bono, poliçe) özgü özel takip yolları da mevcuttur.</p>
+      <p>İflas hukuku ise borçlarını ödeyemeyen tacirlerin malvarlığının tasfiyesi yoluyla alacaklılara orantılı dağıtımını düzenler. Konkordato, iflas erteleme ve iflasın açılması bu alanın başlıca konularıdır.</p>
+      <hr>
+      <h2>İcra Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>İlamsız ve İlamlı İcra Takipleri</h4><p>Senet, fatura, sözleşme veya mahkeme kararına dayalı icra takiplerinin başlatılması ve sonuçlandırılması.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>İhtiyati Haciz İşlemleri</h4><p>Alacağın güvence altına alınması için borçlunun mal ve hesaplarına ihtiyati haciz konulması.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Çek ve Senet (Kambiyo) Takipleri</h4><p>Kambiyo senetlerine özgü hızlandırılmış takip yolu ile alacağın tahsili ve imzaya itiraz süreçleri.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>İtirazın İptali Davaları</h4><p>Borçlunun haksız itirazı sonucu duran takibin yargısal yolla sürdürülmesi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Borca ve Hacze İtiraz</h4><p>Haksız icra takiplerine karşı borçlu tarafından açılacak savunma süreçlerinin yönetimi.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>İcra hukuku, kanuni sürelerin kaçırılması halinde telafi edilemeyen hak kayıplarına yol açabilir. <strong>Antalya İcra Avukatı Mücahit Çelik</strong>, alacaklılar ve borçlular için profesyonel takip yönetimi sağlamaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">İcra Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── TÜKETİCİ HUKUKU ─────────── -->
+<div class="page" id="page-tuketici">
+  <div class="page-header">
+    <div class="section-label">Antalya Tüketici Hukuku Avukatı</div>
+    <h1>Tüketici Hukuku</h1>
+    <p>Tüketici hakları, ayıplı mal ve hizmet uyuşmazlıklarında uzman çözüm.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Tüketici hukuku, mal ve hizmet alımında tüketicinin korunmasını amaçlayan, satıcı ve üretici karşısında ekonomik olarak zayıf konumdaki bireyi güçlendiren hukuk dalıdır. Türkiye'de 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve ilgili yönetmelikler bu alanın temel mevzuatını oluşturur.</p>
+      <h2>Türk Tüketici Hukuku Nedir?</h2>
+      <p>Tüketici hukuku; ayıplı mal ve hizmet, mesafeli sözleşmeler, taksitli satışlar, finansal hizmetler, devre tatil, paket tur, tüketici kredileri gibi geniş bir uygulama alanına sahiptir. Uyuşmazlıklarda görevli mahkemeler, parasal sınıra göre <strong>Tüketici Hakem Heyetleri</strong> veya <strong>Tüketici Mahkemeleri</strong>dir.</p>
+      <hr>
+      <h2>Tüketici Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>Tüketici Mahkemesi Davaları</h4><p>Ayıplı mal/hizmet, garanti, iade ve sözleşmeden cayma haklarına ilişkin yargısal süreçlerin yönetimi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Araç Değer Kaybı Davaları</h4><p>Trafik kazalarında aracın uğradığı değer kaybının sigorta şirketinden veya karşı taraftan tahsili.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Ayıplı Mal ve Hizmet Davaları</h4><p>Satıcının/sağlayıcının ayıplı mal veya hizmet sunması durumunda ücret iadesi, değişim veya tazminat talebi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Banka ve Finansal Hizmet Uyuşmazlıkları</h4><p>Haksız kesinti, dosya masrafı, kart aidatı, kredi sözleşmesi şartlarından doğan uyuşmazlıkların çözümü.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>Tüketicinin Korunması Hakkında Kanun, tüketicinin lehine pek çok hak tanımakla birlikte sürelerin doğru takibi şarttır. <strong>Antalya Tüketici Hukuku Avukatı Mücahit Çelik</strong>, tüketicilerin haklarının etkili biçimde korunması için profesyonel hizmet sunmaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">Tüketici Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── TİCARET HUKUKU ─────────── -->
+<div class="page" id="page-ticaret">
+  <div class="page-header">
+    <div class="section-label">Antalya Şirket ve Ticaret Hukuku Avukatı</div>
+    <h1>Ticaret Hukuku</h1>
+    <p>Şirket hukuku, ticari sözleşmeler ve ticari uyuşmazlıklarda profesyonel danışmanlık.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Ticaret hukuku, tacirler ve ticari işletmelere ilişkin kuralları düzenleyen, ticari hayatın işleyişini güvence altına alan hukuk dalıdır. Türkiye'de 6102 sayılı Türk Ticaret Kanunu (TTK) başta olmak üzere, Sermaye Piyasası Kanunu, Rekabet Kanunu ve diğer ilgili mevzuat çerçevesinde uygulanır.</p>
+      <h2>Türk Ticaret Hukuku Nedir?</h2>
+      <p>Ticaret hukuku başlıca üç ana alana ayrılır: <strong>Ticari İşletme Hukuku</strong> (tacir, ticari işletme, ticari iş ve davalar), <strong>Şirketler Hukuku</strong> (anonim, limited, kollektif ve komandit şirketler) ve <strong>Kıymetli Evrak Hukuku</strong> (çek, bono, poliçe gibi senetler). Sigortacılık ve deniz ticareti de bu alanın özel kollarındandır.</p>
+      <hr>
+      <h2>Ticaret Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>Şirket Kuruluşu</h4><p>Anonim, limited ve diğer şirket türlerinin kurulması, ana sözleşmelerin hazırlanması ve tescili.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Ticari Sözleşmelerin Hazırlanması</h4><p>Bayilik, distribütörlük, franchise, hizmet ve mal alım-satım sözleşmelerinin müvekkil lehine düzenlenmesi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Ortaklık Anlaşmazlıkları</h4><p>Ortaklar arası uyuşmazlıkların çözümü, hisse devri, ortaklıktan çıkma ve çıkarma davaları.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Ticari Dava Takibi</h4><p>Asliye Ticaret Mahkemelerinde görülen alacak, tazminat ve haksız rekabet davalarının yönetimi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Sürekli Şirket Danışmanlığı</h4><p>Şirketlere günlük operasyonel kararlar, sözleşmeler ve risk yönetimi konularında hukuki destek.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>Ticari hayatta hukuki riskleri öngörmek, sözleşmeleri sağlam temellere oturtmak ve uyuşmazlıkları minimize etmek için profesyonel ticaret hukuku desteği şarttır. <strong>Antalya Şirket Avukatı Mücahit Çelik</strong>, ticari işletmelere ve girişimcilere kapsamlı hizmet sunmaktadır.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">Ticaret Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
+<!-- ─────────── YABANCILAR HUKUKU ─────────── -->
+<div class="page" id="page-yabancilar">
+  <div class="page-header">
+    <div class="section-label">Antalya Yabancılar Hukuku Avukatı</div>
+    <h1>Yabancılar Hukuku</h1>
+    <p>Oturma izni, çalışma izni, vatandaşlık ve sınır dışı işlemlerinde uzman destek.</p>
+  </div>
+  <div class="section">
+    <div class="hukuk-content">
+      <p>Yabancılar hukuku, Türk vatandaşı olmayan kişilerin Türkiye'ye giriş, çıkış, ikamet, çalışma ve vatandaşlık edinim süreçlerini düzenleyen hukuk dalıdır. Antalya gibi yoğun yabancı nüfusunun bulunduğu şehirlerde bu alandaki başvuru ve uyuşmazlıklar büyük yer tutmaktadır.</p>
+      <h2>Türk Yabancılar Hukuku Nedir?</h2>
+      <p>Temel mevzuat olarak <strong>6458 sayılı Yabancılar ve Uluslararası Koruma Kanunu</strong>, <strong>5901 sayılı Türk Vatandaşlığı Kanunu</strong>, <strong>6735 sayılı Uluslararası İşgücü Kanunu</strong> ve ilgili yönetmelikler uygulanır. Göç İdaresi Genel Müdürlüğü ve Çalışma ve Sosyal Güvenlik Bakanlığı bu alanın yetkili idari mercileridir.</p>
+      <p>İkamet izni türleri (kısa dönem, aile, öğrenci, uzun dönem, insani), çalışma izni süreçleri ve istisnai/genel yollarla Türk vatandaşlığı edinimi bu alanın ana konularıdır.</p>
+      <hr>
+      <h2>Yabancılar Hukuku Avukatının Görevleri</h2>
+      <div class="gorev-list">
+        <div class="gorev-item"><div class="gorev-num">1</div><div><h4>İkamet (Oturma) İzni Başvuruları</h4><p>Kısa dönem, aile, öğrenci, uzun dönem ve insani ikamet izni başvurularının hazırlanması ve takibi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">2</div><div><h4>Çalışma İzni İşlemleri</h4><p>Yabancı çalışan ve işveren adına çalışma izni başvurusu, uzatma ve istisnai çalışma izinleri.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">3</div><div><h4>Türk Vatandaşlığı Başvurusu</h4><p>Genel, evlilik, taşınmaz edinimi (250.000 USD ve üzeri) yoluyla istisnai vatandaşlık başvuruları.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">4</div><div><h4>Sınır Dışı (Deport) Kararının İptali</h4><p>Sınır dışı edilme kararına karşı 7 gün içinde İdare Mahkemesi'ne iptal davası açılması ve takibi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">5</div><div><h4>Yabancıların Gayrimenkul Alımı</h4><p>Karşılıklılık, askeri yasak bölge ve yüzölçümü kontrolleri ile tapu işlemlerinin güvenli yürütülmesi.</p></div></div>
+        <div class="gorev-item"><div class="gorev-num">6</div><div><h4>Tanıma ve Tenfiz Davaları</h4><p>Yabancı mahkeme kararlarının (boşanma, velayet, miras vb.) Türkiye'de tanınması ve uygulanması.</p></div></div>
+      </div>
+      <hr>
+      <h2>Sonuç</h2>
+      <p>Yabancılar hukuku, idari sürelerin sıkı ve hak kayıplarının ağır olduğu bir alandır. <strong>Antalya Yabancılar Hukuku Avukatı Mücahit Çelik</strong>, yabancı uyruklu müvekkillere ikamet, çalışma, vatandaşlık ve sınır dışı süreçlerinde profesyonel destek vermektedir.</p>
+    </div>
+    <br>
+    <button class="hero-btn" onclick="showPage('blog')" style="font-size:11px;padding:12px 28px">Yabancılar Hukuku Makaleleri</button>
+  </div>
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
 <!-- ─────────── BLOG ─────────── -->
 <div class="page" id="page-blog">
   <div class="page-header">
     <div class="section-label">Güncel İçerikler</div>
     <h1>Hukuki Makaleler</h1>
-    <p>Ceza hukuku, idare hukuku ve aile hukuku alanlarında güncel makaleler.</p>
+    <p>Aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku alanlarında güncel makaleler.</p>
   </div>
   <div class="section">
     <div class="blog-grid">
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Verileri Hukuka Aykırı Olarak Verme veya Ele Geçirme Suçu (TCK 136)</h4><p>Kişisel verilerin korunması hakkını ihlal eden, bu verilerin yayılmasını veya yetkisiz kişilere aktarılmasını suç olarak tanımlayan düzenlemenin kapsamlı incelemesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişisel Verilerin Kaydedilmesi Suçu (TCK 135)</h4><p>Bireyin kimliğini belirli veya belirlenebilir kılan her türlü bilginin hukuka aykırı olarak kayıt altına alınması suçunun incelenmesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Özel Hayatın Gizliliğini İhlal Suçu (TCK 134)</h4><p>Bireyin sadece kendisine ait olan, başkaları tarafından bilinmesini istemediği yaşam alanının korunması.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişiler Arasındaki Konuşmaların Dinlenmesi ve Kayda Alınması Suçu (TCK 133)</h4><p>Bireylerin özel bir çaba ile gizli tutulan sözlü iletişimlerinin kayıt altına alınması suçu.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Haberleşmenin Gizliliğini İhlal Suçu (TCK 132)</h4><p>Bireylerin haberleşmesinin içeriğine üçüncü kişilerin hukuka aykırı şekilde müdahale etmesini engelleyen düzenlemenin analizi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Kişilerin Huzur ve Sükununu Bozma Suçu (TCK 123)</h4><p>Bireylerin psikolojik dinginliğini ve sükûnet içerisinde yaşama hakkını korumayı amaçlayan bu suç tipinin değerlendirilmesi.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Polisler ve Bekçiler için Fazla Çalışma Ücreti ve Yasal Faiz</h4><p>İdari disiplin soruşturmaları sonucu görevden uzaklaştırılmış memurlar için fazla çalışma ücreti ve yasal faiz hakkı.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Subay ve Astsubayların Zorunlu Hizmet Süreleri</h4><p>926 Sayılı Türk Silahlı Kuvvetleri Personel Kanunu kapsamında zorunlu hizmet sürelerine ilişkin kapsamlı bir değerlendirme.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
-      <div class="blog-card"><div class="blog-thumb"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Pasaport Tahdidinin İptali</h4><p>Bir kimsenin yurt dışına çıkmasını engellemek amacıyla idare tarafından tesis edilen işlemin iptali yolları.</p><div class="blog-author">Av. Mücahit Çelik</div></div></div>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/yargitay-kararlari-cercevesinde-bosanma-davalarinda-af-sayilan-ve-sayilmayan-haller-1" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 54 L18 40 C12 34 12 24 18 18 C24 12 30 16 32 20 C34 16 40 12 46 18 C52 24 52 34 46 40 Z"/></svg></div><div class="blog-meta"><div class="blog-cat">Aile Hukuku</div><h4>Yargıtay Kararları Işığında Boşanma Davalarında Af Sayılan Haller</h4><p>Yargıtay'ın yerleşik içtihatlarına göre eşin kusurlu davranışını bilmesine rağmen evlilik birliğini sürdürme iradesi gösteren tarafın eylemleri hukuken "af" niteliği taşır. Hak kaybı yaşamamak için dava öncesi titizlikle değerlendirilmelidir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/turk-medeni-kanunu-m-194-kapsaminda-aile-konutu-uzerinde-yapilan-tasarruf-islemleri" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 54 L18 40 C12 34 12 24 18 18 C24 12 30 16 32 20 C34 16 40 12 46 18 C52 24 52 34 46 40 Z"/></svg></div><div class="blog-meta"><div class="blog-cat">Aile Hukuku</div><h4>Aile Konutu Üzerinde Yapılan Tasarruf İşlemlerinde Eşin Açık Rızası</h4><p>TMK m.194 uyarınca eşlerden biri diğerinin açık rızası olmadan aile konutuyla ilgili kira sözleşmesini feshedemez, evi devredemez veya ipotek tesis edemez. Aile konutu şerhi mağduriyeti önleyen temel hukuki kalkandır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/is-sozlesmelerinde-cezai-sart-aleyna-yilmaz" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="20" width="48" height="32" rx="2"/><path d="M22 20 V14 a3 3 0 0 1 3 -3 h14 a3 3 0 0 1 3 3 V20"/><line x1="8" y1="34" x2="56" y2="34"/></svg></div><div class="blog-meta"><div class="blog-cat">İş Hukuku</div><h4>İş Sözleşmelerinde Cezai Şart Uygulamaları ve Geçerlilik Şartları</h4><p>Yargıtay kararları ışığında, iş sözleşmelerinde yer alan cezai şartın geçerli olabilmesi için "karşılıklılık" ilkesi aranmaktadır. Sadece işçi aleyhine tek taraflı düzenlenen cezai şart maddeleri hukuken geçersizdir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/yillik-ucretli-izin-ve-kidem-tazminatina-esas-surenin-belirlenmesinde-bildirim-suresine-alti-haftanin-eklenmesiyle-olusan-sureyi-gecmemek-kaydiyla-iscinin-ucretsiz-izinde-gecirdigi-sure-dikkate-alinir" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="20" width="48" height="32" rx="2"/><path d="M22 20 V14 a3 3 0 0 1 3 -3 h14 a3 3 0 0 1 3 3 V20"/><line x1="8" y1="34" x2="56" y2="34"/></svg></div><div class="blog-meta"><div class="blog-cat">İş Hukuku</div><h4>Kıdem Tazminatına Esas Sürenin Hesaplanmasında Ücretsiz İzin Dönemi</h4><p>İşçinin kıdem tazminatına hak kazanabilmesi için en az bir yıl çalışmış olması gerekir. Yargıtay'a göre iş sözleşmesinin askıda kaldığı ücretsiz izin süreleri kıdem tazminatı hesabında dışarıda bırakılır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/kira-bedelinde-yuzde-25in-uzerinde-artis-yapan-kiraci-sonradan-fazla-odenen-bedellerin-iadesini-talep-edemez" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 L32 12 L54 30 V52 a2 2 0 0 1 -2 2 H12 a2 2 0 0 1 -2 -2 Z"/><path d="M26 54 V40 H38 V54"/></svg></div><div class="blog-meta"><div class="blog-cat">Gayrimenkul Hukuku</div><h4>Kira Artışında %25 Sınırını Aşan Kiracının İade Talebi</h4><p>Yasal sınırı bilmesine rağmen %25'in üzerinde zamlı ödeme yapan kiracılar fazla bedelin iadesini "sebepsiz zenginleşme" hükümlerine dayanarak isteyemez. Sözleşme aşamasında hakların netleştirilmesi büyük önem taşır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/kira-bedelinin-tespiti-davasinda-talep-sonuc-islah-edilebilir-mi" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 L32 12 L54 30 V52 a2 2 0 0 1 -2 2 H12 a2 2 0 0 1 -2 -2 Z"/><path d="M26 54 V40 H38 V54"/></svg></div><div class="blog-meta"><div class="blog-cat">Gayrimenkul Hukuku</div><h4>Kira Bedelinin Tespiti Davasında Talebin Islah Edilmesi</h4><p>Yargıtay HGK'nın güncel kararlarına göre kira tespit davalarında davacı ev sahibi, ıslah yoluyla talep ettiği kira bedelini artıramaz. Dava açılmadan önce piyasa değeri ve emsal kira analizi hayati önemdedir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/turk-silahli-kuvvetlerinde-emir-emre-itaatsizlik-ve-emre-itaatsizlikte-israr-kavrami-1" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="32" y1="12" x2="32" y2="52"/><line x1="14" y1="22" x2="50" y2="22"/><path d="M14 22 L8 36 H20 Z"/><path d="M50 22 L44 36 H56 Z"/><line x1="22" y1="52" x2="42" y2="52"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Askeri Ceza Hukukunda "Emre İtaatsizlik" ve "Israr" Kavramı</h4><p>Askeri Ceza Kanunu'nda emre itaatsizlikte "ısrar" halinin oluşabilmesi için, amirin emri tekrar etmesi ve astın emri yerine getirmemekte direnmesi gerekir. Suçun unsurlarının oluşup oluşmadığı savunmanın en kritik noktasıdır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://iupress.istanbul.edu.tr/journal/jplc/home" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="32" y1="12" x2="32" y2="52"/><line x1="14" y1="22" x2="50" y2="22"/><path d="M14 22 L8 36 H20 Z"/><path d="M50 22 L44 36 H56 Z"/><line x1="22" y1="52" x2="42" y2="52"/></svg></div><div class="blog-meta"><div class="blog-cat">Ceza Hukuku</div><h4>Yargıtay Kararlarında Haksız Tahrik İndirimi Uygulamaları</h4><p>Yargıtay, haksız tahrik indiriminin uygulanabilmesi için tahrik oluşturan eylemin hukuka aykırı olmasını ve sanığın bu eylem nedeniyle ciddi psikolojik baskı altına girmesini şart koşar. Cezanın süresini radikal biçimde değiştirir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/idarenin-okuldaki-siddet-olaylari-nedeniyle-sorumlulugu" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28 L32 14 L56 28"/><line x1="6" y1="30" x2="58" y2="30"/><line x1="14" y1="30" x2="14" y2="50"/><line x1="32" y1="30" x2="32" y2="50"/><line x1="50" y1="30" x2="50" y2="50"/><line x1="6" y1="54" x2="58" y2="54"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Okullarda Yaşanan Şiddet Olaylarında Devletin Sorumluluğu</h4><p>Eğitim kurumlarında yaşanan şiddet veya kazalar sonucu doğan zararlardan idare (MEB) sorumludur. "Hizmet kusuru" durumlarında aileler İdare Mahkemelerinde Tam Yargı Davası açarak haklarını arayabilir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/orman-yanginlari-neticesinde-meydana-gelen-zararlardan-idarenin-sorumlulugu" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28 L32 14 L56 28"/><line x1="6" y1="30" x2="58" y2="30"/><line x1="14" y1="30" x2="14" y2="50"/><line x1="32" y1="30" x2="32" y2="50"/><line x1="50" y1="30" x2="50" y2="50"/><line x1="6" y1="54" x2="58" y2="54"/></svg></div><div class="blog-meta"><div class="blog-cat">İdare Hukuku</div><h4>Doğal Afetler Neticesinde Doğan Zararlarda İdarenin Sorumluluğu</h4><p>Doğal afetler "mücbir sebep" sayılsa da idarenin önlem alma ve müdahale yükümlülükleri vardır. İmar/dere yatağı/orman yangını ihmallerinde tazminat sorumluluğu doğar. Sıkı zamanaşımı süreleri vardır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://dergipark.org.tr/tr/search?q=%22ihtiyati+haciz%22" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="20"/><path d="M27 22 H38 M25 32 H38 M27 42 H35"/><line x1="32" y1="20" x2="32" y2="44"/></svg></div><div class="blog-meta"><div class="blog-cat">İcra ve İflas Hukuku</div><h4>İhtiyati Haciz Kararlarına İtiraz Süreci ve Sonuçları</h4><p>İhtiyati haciz çoğu zaman borçlu dinlenmeden evrak üzerinden verilir. Haksız veya eksik evrakla alınan karara karşı kararı öğrenme tarihinden itibaren kısa sürede itiraz edilmesi zorunludur.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://dergipark.org.tr/tr/search?q=%22imzaya+itiraz%22+%22kambiyo%22" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="20"/><path d="M27 22 H38 M25 32 H38 M27 42 H35"/><line x1="32" y1="20" x2="32" y2="44"/></svg></div><div class="blog-meta"><div class="blog-cat">İcra ve İflas Hukuku</div><h4>Kambiyo Senetlerinde (Çek, Senet) İmzaya İtiraz İşlemleri</h4><p>Çek/bono/poliçe takibinde imza borçluya ait değilse ödeme emrinin tebliğinden itibaren 5 gün içinde İcra Hukuk Mahkemesi'nde itiraz edilmesi zorunludur. Aksi halde imza kabul edilmiş sayılır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/bir-tarafi-tuketici-olan-avukatlik-sozlesmelerinden-kaynaklanan-uyusmazliklar-tahkime-elverisli-degildir" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 24 H50 L54 56 H10 Z"/><path d="M22 24 V14 a10 10 0 0 1 20 0 V24"/></svg></div><div class="blog-meta"><div class="blog-cat">Tüketici Hukuku</div><h4>Avukatlık Sözleşmelerinde Tahkim Şartı ve Tüketici Yönü</h4><p>Yargıtay'ın güncel kararlarına göre, bir tarafı tüketici olan avukatlık sözleşmelerine konulan "tahkim heyeti yetkilidir" şeklindeki maddeler tüketicinin aleyhine olduğu için geçersiz sayılmaktadır.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/menfi-tespit-davasinda-ciro-yoluyla-devralinan-tuketici-senetlerinde-iyiniyet-iddiasi" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 24 H50 L54 56 H10 Z"/><path d="M22 24 V14 a10 10 0 0 1 20 0 V24"/></svg></div><div class="blog-meta"><div class="blog-cat">Tüketici Hukuku</div><h4>Menfi Tespit Davasında Tüketici Senetlerinde İyiniyet İddiası</h4><p>Tüketicilerden alınan senetlerin "nama yazılı" olması ve her taksit için ayrı düzenlenmesi zorunludur. Emre yazılı senetleri ciro yoluyla devralan üçüncü kişiler iyiniyet iddiasında bulunamaz.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/sirket-genel-kurul-karari-olmaksizin-kar-payi-talep-edilemeyecegine-iliskin-yargitay-kararinin-degerlendirilmesi" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="10" width="40" height="46"/><line x1="12" y1="20" x2="52" y2="20"/><line x1="12" y1="30" x2="52" y2="30"/><line x1="12" y1="40" x2="52" y2="40"/><line x1="22" y1="10" x2="22" y2="56"/><line x1="32" y1="10" x2="32" y2="56"/><line x1="42" y1="10" x2="42" y2="56"/></svg></div><div class="blog-meta"><div class="blog-cat">Ticaret Hukuku</div><h4>Şirket Genel Kurul Kararı Olmadan Kâr Payı Talep Edilebilir mi?</h4><p>TTK uyarınca şirket bilançosunda kâr görünse dahi Genel Kurul'un kâr dağıtım kararı olmadıkça ortaklar doğrudan kâr payı için dava açamazlar. Azınlık ortakları için ana sözleşme önemlidir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://www.hukukihaber.net/iki-ortakli-limited-sirketlerde-ortakliktan-cikarilma-islemi-ile-ilgili-duzenlemeler-iceren-kurallara-iliskin-itiraz-basvurusu-hakkinda-karar" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="10" width="40" height="46"/><line x1="12" y1="20" x2="52" y2="20"/><line x1="12" y1="30" x2="52" y2="30"/><line x1="12" y1="40" x2="52" y2="40"/><line x1="22" y1="10" x2="22" y2="56"/><line x1="32" y1="10" x2="32" y2="56"/><line x1="42" y1="10" x2="42" y2="56"/></svg></div><div class="blog-meta"><div class="blog-cat">Ticaret Hukuku</div><h4>İki Ortaklı Limited Şirketlerde Ortaklıktan Çıkarma İşlemleri</h4><p>İki ortaklı limited şirketlerde haklı sebep varsa bir ortağın çıkarılması mümkündür ancak Genel Kurul kararı kilitlenebilir. Asliye Ticaret Mahkemesi'ne fesih veya çıkarma talebiyle başvurulabilir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://dergipark.org.tr/tr/search?q=%22yabanc%C4%B1lar%C4%B1n+ta%C5%9F%C4%B1nmaz+edinimi%22" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="9" ry="22"/><line x1="10" y1="32" x2="54" y2="32"/><path d="M14 18 a30 30 0 0 0 36 0"/><path d="M14 46 a30 30 0 0 1 36 0"/></svg></div><div class="blog-meta"><div class="blog-cat">Yabancılar Hukuku</div><h4>Yabancıların Türkiye'de Taşınmaz Edinimi Şartları</h4><p>Antalya gibi yoğun ilgi gören şehirlerde yabancıların gayrimenkul satın alması yasal şartlara tabidir. Askeri yasak bölge ve yüzölçümü kısıtları, vatandaşlık başvuruları için profesyonel destek gerekir.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
+      <a class="blog-card" href="https://dergipark.org.tr/tr/search?q=%22s%C4%B1n%C4%B1r+d%C4%B1%C5%9F%C4%B1+karar%C4%B1%22" target="_blank" rel="noopener"><div class="blog-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="9" ry="22"/><line x1="10" y1="32" x2="54" y2="32"/><path d="M14 18 a30 30 0 0 0 36 0"/><path d="M14 46 a30 30 0 0 1 36 0"/></svg></div><div class="blog-meta"><div class="blog-cat">Yabancılar Hukuku</div><h4>Yabancılar Hakkında Verilen Sınır Dışı (Deport) Kararları ve İtiraz Yolları</h4><p>Vize/ikamet ihlali, suç veya kamu güvenliği nedeniyle Göç İdaresi'nin verdiği sınır dışı kararlarına karşı 7 gün içinde İdare Mahkemesi'ne iptal davası açılmalıdır. Dava açılınca işlem durdurulur.</p><div class="blog-author">Av. Mücahit Çelik</div></div></a>
+
     </div>
   </div>
   <div class="info-band">
@@ -1317,7 +1579,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
 </a>
 
 <script>
-const pages=['anasayfa','kurumsal','hizmetler','ceza','aile','idare','blog','iletisim','etahsilat'];
+const pages=['anasayfa','kurumsal','hizmetler','ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar','blog','iletisim','etahsilat'];
 function showPage(id){
   pages.forEach(p=>{
     document.getElementById('page-'+p).classList.toggle('active',p===id);

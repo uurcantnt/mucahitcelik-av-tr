@@ -93,7 +93,8 @@
         ]
       },
       "sameAs": [
-        "https://www.google.com/maps?cid=13087429158419352344"
+        "https://www.google.com/maps?cid=13087429158419352344",
+        "https://www.antalyabarosu.org.tr/AvukatArama"
       ]
     },
     {
@@ -225,6 +226,16 @@ nav{position:sticky;top:0;z-index:1000;background:var(--dark);border-bottom:1px 
 .hizmet-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
 .hizmet-btn{margin-top:auto;background:var(--gold);color:var(--dark);text-align:center;padding:12px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background 0.2s;border:none;display:block}
 .hizmet-btn:hover{background:var(--gold-light)}
+.hesaplama-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:32px}
+.hesaplama-card{background:var(--gold-pale);border:1px solid var(--border);border-radius:6px;padding:24px 14px;text-align:center;cursor:pointer;transition:transform 0.18s,box-shadow 0.18s,background 0.18s;display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.hesaplama-card:hover{background:rgba(184,151,58,0.22);transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.07)}
+.hesaplama-icon{width:50px;height:50px;display:flex;align-items:center;justify-content:center;color:var(--gold);background:var(--white);border-radius:8px;padding:10px;border:1px solid var(--border)}
+.hesaplama-icon svg{width:100%;height:100%}
+.hesaplama-name{font-size:13px;font-weight:600;color:var(--dark);line-height:1.45}
+.hesaplama-warning{margin-top:44px;padding:28px 24px;background:var(--dark);border-radius:4px;text-align:center;border:1px solid var(--gold)}
+.hesaplama-warning .dlab{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hesaplama-warning p{font-size:14px;color:#bfb6a7;line-height:1.75;margin:0 auto 18px;max-width:620px;font-weight:300}
+.hesaplama-warning .hero-btn{margin:0 6px}
 .about-strip{background:var(--dark);padding:72px 3rem;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .about-img-placeholder{width:100%;aspect-ratio:3/4;background:var(--dark-mid);border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
 .about-img-placeholder svg{opacity:0.25;width:80px;height:80px;fill:var(--gold)}
@@ -473,6 +484,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
     <li><a onclick="showPage('anasayfa')" id="nav-anasayfa" class="active">Anasayfa</a></li>
     <li><a onclick="showPage('kurumsal')" id="nav-kurumsal">Kurumsal</a></li>
     <li><a onclick="showPage('hizmetler')" id="nav-hizmetler">Hizmetlerimiz</a></li>
+    <li><a onclick="showPage('hesaplama')" id="nav-hesaplama">Hesaplama</a></li>
     <li><a onclick="showPage('blog')" id="nav-blog">Blog</a></li>
     <li><a onclick="showPage('iletisim')" id="nav-iletisim">İletişim</a></li>
     <li><a onclick="showPage('etahsilat')" id="nav-etahsilat">E-Tahsilat</a></li>
@@ -487,6 +499,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
   <a onclick="showPage('anasayfa');closeMenu()" id="mnav-anasayfa" class="active">Anasayfa</a>
   <a onclick="showPage('kurumsal');closeMenu()" id="mnav-kurumsal">Kurumsal</a>
   <a onclick="showPage('hizmetler');closeMenu()" id="mnav-hizmetler">Hizmetlerimiz</a>
+  <a onclick="showPage('hesaplama');closeMenu()" id="mnav-hesaplama">Hesaplama Araçları</a>
   <a onclick="showPage('blog');closeMenu()" id="mnav-blog">Blog</a>
   <a onclick="showPage('iletisim');closeMenu()" id="mnav-iletisim">İletişim</a>
   <a onclick="showPage('etahsilat');closeMenu()" id="mnav-etahsilat">E-Tahsilat</a>
@@ -1112,6 +1125,108 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
   <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
 </div>
 
+<!-- ─────────── HESAPLAMA ARAÇLARI ─────────── -->
+<div class="page" id="page-hesaplama">
+  <div class="page-header">
+    <div class="section-label">Hukuki Hesaplama Araçları</div>
+    <h1>Hesaplama Araçları</h1>
+    <p>Hukuki süreçlerde sıkça başvurulan tazminat, harç ve ücret hesaplamalarına ilişkin pratik bilgilere aşağıdan ulaşabilirsiniz.</p>
+  </div>
+
+  <div class="section">
+    <div class="hesaplama-grid">
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Kira Stopaj Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Kira Artış Oranı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">İnfaz Yatar Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">İhbar Tazminatı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Islah Harcı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">İşsizlik Maaşı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Nafaka Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Trafik Kazası Tazminatı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Doğum İzni Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Askerlik Borçlanması Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Yıllık İzin Ücreti Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">İş Kazası Tazminatı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Emekli Maaşı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Tapu Harcı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Araç Değer Kaybı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Nafaka Artış Oranı Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Fazla Mesai Ücreti Hesaplama</div>
+      </a>
+      <a class="hesaplama-card" onclick="showPage('iletisim')">
+        <div class="hesaplama-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="36" height="48" rx="3"/><rect x="20" y="14" width="24" height="8"/><line x1="20" y1="32" x2="44" y2="32"/><line x1="32" y1="28" x2="32" y2="36"/><line x1="20" y1="44" x2="44" y2="44"/></svg></div>
+        <div class="hesaplama-name">Dava Harcı Hesaplama</div>
+      </a>
+    </div>
+
+    <div class="hesaplama-warning">
+      <div class="dlab">Önemli Uyarı</div>
+      <p>Hesaplama araçları yalnızca <strong>bilgi amaçlı</strong> oluşturulmuştur. Davanıza özgü detaylı bilgi ve net sonuç için lütfen tarafımıza ulaşın — her dosyanın koşulları farklıdır ve profesyonel hukuki değerlendirme gerektirir.</p>
+      <a class="hero-btn" href="tel:+902422441066">(0242) 244 10 66</a>
+      <a class="hero-btn secondary" onclick="showPage('iletisim')">İletişime Geç</a>
+    </div>
+  </div>
+
+  <div class="info-band">
+    <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">İletişim</div><a href="tel:+902422441066">(0242) 244 10 66</a><a href="tel:+905070096194">+90 507 009 61 94</a><a href="mailto:mucahitcelikav@gmail.com">mucahitcelikav@gmail.com</a></div>
+    <div class="info-divider"></div>
+    <div class="info-col"><div class="info-label-f">Online Ödeme</div><p style="font-size:12px;margin-bottom:4px">Türkiye Barolar Birliği onaylı sanal pos hizmeti ile ödemelerinizi hızlı ve güvenli yapabilirsiniz.</p><a class="online-pay-link" onclick="showPage('etahsilat')">Online ödeme →</a></div>
+  </div>
+  <footer><p>©2024 Avukat Mücahit Çelik. Tüm fikri mülkiyet hakları saklıdır.</p><div class="flinks"><a onclick="showPage('iletisim')">İletişim</a><a onclick="showPage('etahsilat')">E-Tahsilat</a></div></footer>
+</div>
+
 <!-- ─────────── CEZA HUKUKU ─────────── -->
 <div class="page" id="page-ceza">
   <div class="page-header">
@@ -1728,7 +1843,7 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
 </a>
 
 <script>
-const pages=['anasayfa','kurumsal','hizmetler','ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar','blog','iletisim','etahsilat'];
+const pages=['anasayfa','kurumsal','hizmetler','hesaplama','ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar','blog','iletisim','etahsilat'];
 const serviceDetailPages=['ceza','aile','idare','is','gayrimenkul','icra','tuketici','ticaret','yabancilar'];
 function showPage(id,push){
   if(push===undefined)push=true;

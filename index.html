@@ -236,6 +236,31 @@ nav{position:sticky;top:0;z-index:1000;background:var(--dark);border-bottom:1px 
 .hesaplama-warning .dlab{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .hesaplama-warning p{font-size:14px;color:#bfb6a7;line-height:1.75;margin:0 auto 18px;max-width:620px;font-weight:300}
 .hesaplama-warning .hero-btn{margin:0 6px}
+.calc-modal{position:fixed;inset:0;background:rgba(26,24,20,0.85);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px;backdrop-filter:blur(3px)}
+.calc-modal.open{display:flex;animation:slideDown 0.2s ease-out}
+.calc-content{background:var(--white);border-radius:8px;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;padding:34px 30px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.calc-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--mid);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}
+.calc-close:hover{background:var(--gold-pale);color:var(--dark)}
+.calc-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--dark);margin:0 0 8px;padding-right:30px}
+.calc-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px;padding:12px 14px;background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:3px}
+.calc-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.calc-field label{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:0.04em}
+.calc-field input,.calc-field select{padding:11px 14px;border:1px solid var(--border);border-radius:4px;font-size:14px;font-family:inherit;background:var(--light);color:var(--dark)}
+.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--gold);background:var(--white)}
+.calc-btn-row{display:flex;gap:10px;margin-top:18px}
+.calc-btn{flex:1;background:var(--gold);color:var(--dark);border:none;padding:13px;border-radius:4px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-family:inherit}
+.calc-btn:hover{background:var(--gold-light)}
+.calc-btn.secondary{background:transparent;color:var(--mid);border:1px solid var(--border)}
+.calc-btn.secondary:hover{background:var(--gold-pale);color:var(--dark)}
+.calc-results{margin-top:22px;padding:18px 20px;background:linear-gradient(135deg,var(--gold-pale),var(--white));border-radius:5px;border-left:4px solid var(--gold);display:none}
+.calc-results.show{display:block;animation:slideDown 0.25s ease-out}
+.calc-results h4{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);margin:0 0 12px;letter-spacing:0.05em}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(184,151,58,0.18);font-size:13px;gap:12px}
+.calc-result-row:last-child{border-bottom:none;font-weight:700;color:var(--dark);font-size:15px;padding-top:12px;margin-top:6px;border-top:2px solid var(--gold)}
+.calc-result-row:last-child .calc-result-value{color:var(--gold);font-size:17px}
+.calc-result-label{color:var(--mid);flex:1}
+.calc-result-value{color:var(--dark);font-weight:600;text-align:right;white-space:nowrap}
+.calc-disclaimer{font-size:11px;color:var(--muted);margin-top:16px;font-style:italic;line-height:1.55;padding-top:12px;border-top:1px dashed var(--border)}
 .about-strip{background:var(--dark);padding:72px 3rem;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .about-img-placeholder{width:100%;aspect-ratio:3/4;background:var(--dark-mid);border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
 .about-img-placeholder svg{opacity:0.25;width:80px;height:80px;fill:var(--gold)}
@@ -266,11 +291,10 @@ a.blog-card:hover .blog-thumb{background:linear-gradient(135deg,var(--dark-mid) 
 .page-header .section-label{margin-bottom:10px}
 .page-header h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);color:var(--white);line-height:1.2}
 .page-header p{font-size:14px;color:#7a7470;margin-top:12px;max-width:600px;font-weight:300}
-.kurumsal-grid{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start;margin-top:32px}
-.kurumsal-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;border:1px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+.kurumsal-grid{display:grid;grid-template-columns:260px 1fr;gap:42px;align-items:center;margin-top:32px}
+.kurumsal-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:4px;border:1px solid var(--border);box-shadow:0 8px 30px rgba(0,0,0,0.12);max-height:340px}
 .kurumsal-bio{font-size:14.5px;color:var(--mid);line-height:1.8}
 .kurumsal-bio p+p{margin-top:0.85rem}
-.alanlar-list-wrap{margin-top:48px}
 .alanlar-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
 .alan-item{padding:18px 20px;background:var(--white);transition:background 0.15s;cursor:pointer;display:flex;flex-direction:column;gap:6px}
 .alan-item:hover{background:var(--gold-pale)}
@@ -919,53 +943,12 @@ footer p{font-size:11px;color:#453f38;letter-spacing:0.03em}
     <div class="kurumsal-grid">
       <img class="kurumsal-photo" src="mucahit-celik-kurumsal.jpg" alt="Avukat Mücahit Çelik – Antalya Barosu Üyesi, Kızılkaya Hukuk Bürosu Kurucu Ortağı" loading="lazy" decoding="async" width="900" height="1200" onerror="this.style.display='none'">
       <div class="kurumsal-bio">
-        <p>Avukat Mücahit Çelik, <strong>Antalya Barosu'na (Sicil No: 7781)</strong> bağlı olarak kurucu ortağı olduğu Kızılkaya Hukuk Bürosu'nda aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku alanlarında serbest avukat olarak çalışmaktadır.</p>
-        <p>Lisans eğitimini hukuk fakültesinde tamamlayan Av. Mücahit Çelik, üniversite yılları içerisinde İş Hukuku, İcra İflas Hukuku ve Ceza Hukuku alanlarında staj yapmıştır. Yasal avukatlık stajını Ceza Hukuku ve İdare Hukuku üzerine çalışan ofislerde tamamlamıştır.</p>
+        <p>Avukat Mücahit Çelik, <strong>2020 yılında Akdeniz Üniversitesi Hukuk Fakültesi'nden</strong> mezun olmuştur. Avukatlık stajını <strong>Kızılkaya Hukuk Bürosu</strong>'nda tamamlamıştır.</p>
+        <p><strong>Antalya Barosu'na (Sicil No: 7781)</strong> kayıtlı serbest avukat olarak, kurucu ortağı olduğu Kızılkaya Hukuk Bürosu'nda aile, iş, gayrimenkul, ceza, idare, icra, tüketici, ticaret ve yabancılar hukuku alanlarında hizmet vermektedir.</p>
         <p>Müvekkillerine her zaman dürüst, şeffaf ve çözüm odaklı bir hizmet sunmayı ilke edinen Av. Mücahit Çelik, hukuki süreçlerin her aşamasında yanınızda olmaktadır.</p>
       </div>
     </div>
-    <div class="alanlar-list-wrap">
-      <div class="section-label" style="margin-bottom:14px">Çalışma Alanları</div>
-      <div class="alanlar-list">
-          <div class="alan-item" onclick="showPage('aile')">
-            <h3>Aile Hukuku</h3>
-            <p>Çekişmeli ve anlaşmalı boşanma davaları, nafaka, velayet, kişisel ilişki kurulması, mal rejiminin tasfiyesi ve nişan bozma tazminatı davalarında avukatlık ve danışmanlık hizmeti verilmektedir.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('is')">
-            <h3>İş Hukuku</h3>
-            <p>Kıdem ve ihbar tazminatı, işe iade, mobbing, hizmet tespiti ve fazla mesai ücreti gibi işçi-işveren uyuşmazlıklarında profesyonel hukuki destek sağlanmaktadır.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('gayrimenkul')">
-            <h3>Gayrimenkul ve Kira Hukuku</h3>
-            <p>Tahliye davaları, kira bedeli tespit ve uyarlama, tapu iptal ve tescil, izale-i şüyu (ortaklığın giderilmesi) ile kat karşılığı inşaat sözleşmelerine ilişkin uyuşmazlıklarda hizmet verilmektedir.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('ceza')">
-            <h3>Ceza Hukuku</h3>
-            <p>Ceza hukuku, bireylerin ve toplumun güvenliğini sağlamak amacıyla suç ve ceza kavramlarını düzenleyen bir hukuk dalıdır. Soruşturma, kovuşturma ve infaz aşamasına kadar gereksinim duyulan tüm avukatlık hizmetleri sunulmaktadır.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('idare')">
-            <h3>İdare Hukuku</h3>
-            <p>İdare hukuku, genel hukuktan farklılıkları olan kamu tüzel kişilerinin faaliyetlerini düzenlemek için var olan kuralların bütünüdür. İptal davaları, tam yargı davaları ve idari sözleşmelerden kaynaklanan davalarda hizmet verilmektedir.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('icra')">
-            <h3>İcra ve İflas Hukuku</h3>
-            <p>İlamlı ve ilamsız icra takipleri, ihtiyati haciz işlemleri, çek ve senet (kambiyo) takipleri, itirazın iptali davaları ile ticari alacakların tahsil süreçlerinde profesyonel takip yapılmaktadır.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('tuketici')">
-            <h3>Tüketici Hukuku</h3>
-            <p>Tüketici Mahkemesi davaları, araç değer kaybı başvuruları, ayıplı mal ve hizmet uyuşmazlıkları ile finansal tüketici işlemlerinde tüketici haklarının korunması için hizmet verilmektedir.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('ticaret')">
-            <h3>Ticaret Hukuku</h3>
-            <p>Şirket kuruluşu, ticari sözleşmelerin hazırlanması, ortaklık anlaşmazlıkları ve ticari dava takibi başta olmak üzere şirketlere kapsamlı hukuki danışmanlık ve avukatlık hizmeti sunulmaktadır.</p>
-          </div>
-          <div class="alan-item" onclick="showPage('yabancilar')">
-            <h3>Yabancılar Hukuku</h3>
-            <p>Yabancılar için ikamet ve çalışma izni başvuruları, Türk vatandaşlığı işlemleri, sınır dışı (deport) kararının iptali, yabancıların gayrimenkul edinimi ile yabancı mahkeme kararlarının tanınması ve tenfizi konularında hizmet verilmektedir.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
   <div class="info-band">
     <div class="info-col"><div class="info-label-f">Adres</div><p>Toros, Atatürk Blv. Başak Apt<br>No:11 Kat:4 No:52, 07070 Konyaaltı / ANTALYA</p></div>
     <div class="info-divider"></div>

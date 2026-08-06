@@ -197,7 +197,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--carbon);font-size:
 }
 
 /* ───────── NAV ───────── */
-nav{position:sticky;top:0;z-index:1000;background:rgba(243,242,239,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;gap:1rem}
+nav-shell-placeholder{}
+.nav-shell{position:sticky;top:0;z-index:1000;background:rgba(243,242,239,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);height:72px;gap:1rem;max-width:1360px;margin:0 auto}
 .nav-logo{display:flex;align-items:center;gap:12px;line-height:1.2;cursor:pointer;flex-shrink:0}
 .nav-logo .logo-mark{width:36px;height:36px;flex-shrink:0;background:var(--carbon);color:var(--bg);display:grid;place-items:center;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.01em}
 .nav-logo .logo-text{display:flex;flex-direction:column}
@@ -213,13 +215,19 @@ nav{position:sticky;top:0;z-index:1000;background:rgba(243,242,239,.93);backdrop
 .hamburger:hover,.hamburger:active{background:var(--carbon)}
 .hamburger:hover span,.hamburger:active span{background:var(--bg)}
 .hamburger:hover::after,.hamburger:active::after{color:var(--bg)}
-.hamburger span{display:block;width:22px;height:2px;background:var(--carbon);transition:background .2s}
+.hamburger span{display:block;width:22px;height:2px;background:var(--carbon);transition:background .2s,transform .3s var(--ease),opacity .2s}
+.hamburger.acik{background:var(--carbon)}
+.hamburger.acik span{background:var(--bg)}
+.hamburger.acik::after{content:'KAPAT';color:var(--bg)}
+.hamburger.acik span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.acik span:nth-child(2){opacity:0}
+.hamburger.acik span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .hamburger::after{content:'MENU';font-family:var(--mono);font-size:8px;letter-spacing:.14em;color:var(--carbon);margin-top:2px;transition:color .2s}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);z-index:999;padding:1rem 1.5rem 1.5rem;border-bottom:1px solid var(--line);flex-direction:column}
+.mobile-menu{display:none;background:var(--white);padding:.5rem var(--pad) 1.5rem;border-top:1px solid var(--line);flex-direction:column;max-height:calc(100vh - 72px);overflow-y:auto;box-shadow:0 22px 40px -26px rgba(20,20,22,.45)}
 .mobile-menu a{display:block;padding:12px 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--line-3);cursor:pointer}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--seal)}
-.mobile-menu.open{display:flex;animation:slideDown .25s var(--ease)}
+.mobile-menu.open{display:flex;animation:slideDown .28s var(--ease)}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
 /* ───────── HERO ───────── */
@@ -543,7 +551,7 @@ footer p{font-family:var(--mono);font-size:10.5px;color:var(--gray-2);letter-spa
   nav{padding:0 1rem;gap:.5rem;height:66px}
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .mobile-menu{top:66px}
+  .mobile-menu{padding-left:1rem;padding-right:1rem;max-height:calc(100vh - 66px)}
   .mobile-menu .menu-pay-btn{display:block;background:var(--seal);color:#fff!important;text-align:center;padding:15px;border-radius:0;margin-top:16px;letter-spacing:.12em;border:none}
   .mobile-menu .menu-pay-btn:hover,.mobile-menu .menu-pay-btn.active{color:#fff!important;background:var(--carbon)}
   .hero-data>*{border-right:0;border-bottom:1px solid var(--line);padding-left:0!important;padding-right:0}
@@ -589,6 +597,7 @@ footer p{font-family:var(--mono);font-size:10.5px;color:var(--gray-2);letter-spa
   </div>
 </div>
 
+<div class="nav-shell">
 <nav>
   <div class="nav-logo" onclick="showPage('anasayfa')">
     <div class="logo-mark" aria-hidden="true">MÇ</div>
@@ -621,6 +630,7 @@ footer p{font-family:var(--mono);font-size:10.5px;color:var(--gray-2);letter-spa
   <a onclick="showPage('iletisim');closeMenu()" id="mnav-iletisim">İletişim</a>
   <a onclick="showPage('etahsilat');closeMenu()" id="mnav-etahsilat">E-Tahsilat</a>
   <a class="menu-pay-btn" onclick="showPage('etahsilat');closeMenu()">Online Ödeme</a>
+</div>
 </div>
 
 <!-- ─────────── ANASAYFA ─────────── -->
@@ -1874,8 +1884,14 @@ window.addEventListener('popstate',function(e){
     history.replaceState({page:'anasayfa'},'',location.pathname);
   }
 })();
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+function menuDurum(acik){
+  document.getElementById('mobileMenu').classList.toggle('open',acik);
+  const h=document.querySelector('.hamburger');
+  if(h)h.classList.toggle('acik',acik);
+  h&&h.setAttribute('aria-expanded',acik?'true':'false');
+}
+function toggleMenu(){menuDurum(!document.getElementById('mobileMenu').classList.contains('open'))}
+function closeMenu(){menuDurum(false)}
 function toggleSss(el){el.parentElement.classList.toggle('open')}
 function railMove(dir){
   const rail=document.getElementById('alanRail');

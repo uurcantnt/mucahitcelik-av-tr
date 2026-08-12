@@ -461,3 +461,5 @@ a.svc-card .svc-link{margin-top:auto;padding-top:16px}
 .harita-adres a:hover{color:var(--carbon)}
 @media(max-width:600px){.diger-alanlar{grid-template-columns:1fr}}
 .etahsilat-h1{font-family:var(--sans);font-weight:500;letter-spacing:-.04em;line-height:1;font-size:clamp(30px,4.4vw,54px);color:var(--bg);margin-bottom:18px}
+/* uzun metinli öne çıkan yorum: daha küçük punto, rahat satır aralığı */
+.review-feature q.uzun{font-size:clamp(16.5px,1.55vw,21px);line-height:1.5;letter-spacing:-.012em}

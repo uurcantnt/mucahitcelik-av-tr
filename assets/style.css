@@ -154,48 +154,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(
 .hizmet-btn{margin-top:auto;background:var(--carbon);color:var(--bg);text-align:center;padding:14px;border-radius:0;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .3s;border:none;display:block}
 .hizmet-btn:hover{background:var(--seal)}
 
-/* ───────── HESAPLAMA ───────── */
-.hesaplama-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-top:1px solid var(--carbon);border-left:1px solid var(--line);margin-top:clamp(24px,3vw,38px)}
-.hesaplama-card{background:var(--white);border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:26px 20px;text-align:left;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-decoration:none;color:inherit}
-.hesaplama-card:hover{background:var(--seal-soft);transform:none;box-shadow:none}
-.hesaplama-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:var(--seal);background:transparent;border-radius:0;padding:0;border:0}
-.hesaplama-icon svg{width:100%;height:100%}
-.hesaplama-name{font-size:15px;font-weight:500;letter-spacing:-.02em;color:var(--carbon);line-height:1.3}
-.hesaplama-warning{margin-top:44px;padding:clamp(28px,3.4vw,46px);background:var(--carbon);border-radius:0;text-align:left;border:0}
-.hesaplama-warning .dlab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-3);margin-bottom:14px}
-.hesaplama-warning p{font-size:15px;color:var(--gray-3);line-height:1.7;margin:0 0 22px;max-width:70ch}
-.hesaplama-warning .hero-btn{margin:0 8px 0 0;background:var(--bg);border-color:var(--bg);color:var(--carbon)}
-.hesaplama-warning .hero-btn:hover{background:var(--seal);border-color:var(--seal);color:#fff}
-.hesaplama-warning .hero-btn.secondary{background:transparent;color:var(--bg);border-color:var(--carbon-3)}
-.hesaplama-warning .hero-btn.secondary:hover{background:var(--bg);color:var(--carbon)}
-
-/* ───────── HESAPLAMA MODAL ───────── */
-.calc-modal{position:fixed;inset:0;background:rgba(20,20,22,.72);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px;backdrop-filter:blur(4px)}
-.calc-modal.open{display:flex;animation:slideDown .2s var(--ease)}
-.calc-content{background:var(--white);border-radius:0;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;padding:clamp(24px,3vw,38px);position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.5);border:1px solid var(--line)}
-.calc-close{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--line);font-size:20px;cursor:pointer;color:var(--gray);width:36px;height:36px;border-radius:0;display:flex;align-items:center;justify-content:center;line-height:1;transition:.25s}
-.calc-close:hover{background:var(--carbon);color:var(--bg);border-color:var(--carbon)}
-.calc-title{font-family:var(--sans);font-size:26px;font-weight:500;letter-spacing:-.03em;color:var(--carbon);margin:0 0 10px;padding-right:40px}
-.calc-desc{font-size:13.5px;color:var(--gray);line-height:1.65;margin-bottom:22px;padding:14px 16px;background:var(--bg);border-left:2px solid var(--seal);border-radius:0}
-.calc-field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-.calc-field label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-2);font-weight:400}
-.calc-field input,.calc-field select{padding:12px 14px;border:1px solid var(--line-2);border-radius:0;font-size:15px;font-family:var(--sans);background:var(--white);color:var(--carbon)}
-.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--seal);box-shadow:0 0 0 3px var(--seal-soft)}
-.calc-btn-row{display:flex;gap:10px;margin-top:20px}
-.calc-btn{flex:1;background:var(--carbon);color:var(--bg);border:1px solid var(--carbon);padding:14px;border-radius:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .3s}
-.calc-btn:hover{background:var(--seal);border-color:var(--seal)}
-.calc-btn.secondary{background:transparent;color:var(--carbon);border-color:var(--line-2)}
-.calc-btn.secondary:hover{background:var(--carbon);color:var(--bg);border-color:var(--carbon)}
-.calc-results{margin-top:24px;padding:22px;background:var(--bg);border-radius:0;border-left:3px solid var(--seal);display:none}
-.calc-results.show{display:block;animation:slideDown .25s var(--ease)}
-.calc-results h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-2);margin:0 0 14px;font-weight:400}
-.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;gap:12px}
-.calc-result-row:last-child{border-bottom:none;font-weight:500;color:var(--carbon);font-size:16px;padding-top:14px;margin-top:6px;border-top:1px solid var(--carbon)}
-.calc-result-row:last-child .calc-result-value{color:var(--seal);font-size:20px;letter-spacing:-.02em}
-.calc-result-label{color:var(--gray);flex:1}
-.calc-result-value{color:var(--carbon);font-weight:500;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-.calc-disclaimer{font-size:12px;color:var(--gray-2);margin-top:18px;font-style:normal;line-height:1.55;padding-top:14px;border-top:1px solid var(--line)}
-
 /* ───────── HAKKIMIZDA ───────── */
 .about-strip{background:var(--bg);padding:clamp(40px,5vw,80px) var(--pad);display:block;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .about-inner{max-width:1360px;margin:0 auto;background:var(--white);border:1px solid var(--line);padding:clamp(20px,2.6vw,38px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4vw,60px);align-items:center}
@@ -400,7 +358,6 @@ footer p{font-family:var(--mono);font-size:10.5px;color:var(--gray-2);letter-spa
 }
 @media(max-width:600px){
   .suclar-grid,.blog-grid,.hizmet-grid,.avantaj-grid{grid-template-columns:1fr}
-  .hesaplama-grid{grid-template-columns:1fr 1fr}
   .btn-row{flex-direction:column;align-items:stretch}
   .hero-btn{justify-content:center}
   .hero-data{grid-template-columns:1fr}

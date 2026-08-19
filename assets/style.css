@@ -423,4 +423,8 @@ a.svc-card .svc-link{margin-top:auto;padding-top:16px}
 /* dil değiştirici */
 .dil-sec{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:11px 12px;border:1px solid var(--line-2);font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--carbon);text-decoration:none;transition:.3s}
 .dil-sec:hover{background:var(--carbon);color:var(--bg);border-color:var(--carbon)}
-@media(max-width:900px){nav .dil-sec{display:none}}
+@media(max-width:900px){
+  nav .dil-sec{min-width:40px;padding:9px 9px;font-size:10.5px;letter-spacing:.08em;margin-left:auto}
+  nav .dil-sec+.hamburger{margin-left:8px}
+}
+@media(max-width:380px){nav .dil-sec{min-width:34px;padding:8px 7px}}

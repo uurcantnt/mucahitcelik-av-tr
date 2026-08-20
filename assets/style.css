@@ -429,3 +429,7 @@ a.svc-card .svc-link{margin-top:auto;padding-top:16px}
 }
 @media(max-width:380px){nav .dil-sec{min-width:34px;padding:8px 7px}}
 .iletisim-h2{font-family:var(--sans);font-size:26px;font-weight:500;letter-spacing:-.03em;color:var(--carbon);margin-bottom:32px}
+.bilgi-notu{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--gray-2);line-height:1.65}
+.hizmet-aciklama{font-size:13.5px;color:var(--gray);line-height:1.65;margin:0 0 4px}
+.hizmet-aciklama a{color:var(--seal);text-decoration:none;white-space:nowrap}
+.hizmet-aciklama a:hover{color:var(--carbon)}

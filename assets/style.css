@@ -444,3 +444,39 @@ a.svc-card .svc-link{margin-top:auto;padding-top:16px}
 .hukuk-content table td{padding:13px 18px 13px 0;color:var(--gray);vertical-align:top}
 .hukuk-content table td:first-child{color:var(--carbon);font-weight:500;width:38%}
 @media(max-width:600px){.hukuk-content table{font-size:13.5px}.hukuk-content table td:first-child{width:44%}}
+
+/* ── bülten yazılarında yapışkan içindekiler (yalnız masaüstü) ──────
+   .hukuk-content tek sütun kalıyor, geniş ekranda sağ taraf boş duruyordu.
+   Bültende gövde ızgaraya alınır, sağa içindekiler + iletişim kartı gelir.
+   1180px altında ızgara kapanır ve yan sütun gizlenir; mobil değişmez. */
+.makale-govde .hukuk-content{max-width:none}
+.makale-yan{display:none}
+@media(min-width:1180px){
+  .makale-govde{display:grid;grid-template-columns:minmax(0,72ch) minmax(272px,320px);
+    justify-content:start;gap:clamp(44px,4vw,76px);align-items:start}
+  .makale-yan{display:block;position:sticky;top:96px}
+}
+nav.mk-icindekiler{display:block;height:auto;max-width:none;margin:0;padding:0;gap:0}
+.mk-icindekiler{border-top:2px solid var(--seal);padding-top:16px}
+.mk-icindekiler b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--seal);margin-bottom:12px}
+.mk-icindekiler ol{list-style:none;margin:0;padding:0;counter-reset:mk}
+.mk-icindekiler li{counter-increment:mk}
+.mk-icindekiler a{display:flex;gap:10px;padding:8px 0;font-size:13.5px;line-height:1.45;
+  color:var(--gray);text-decoration:none;border-bottom:1px solid var(--line-3);
+  transition:color .18s var(--ease)}
+.mk-icindekiler li:last-child a{border-bottom:0}
+.mk-icindekiler a::before{content:counter(mk,decimal-leading-zero);font-family:var(--mono);
+  font-size:11px;color:var(--gray-3);flex:0 0 auto;padding-top:2px;transition:color .18s var(--ease)}
+.mk-icindekiler a:hover{color:var(--carbon)}
+.mk-icindekiler a:hover::before{color:var(--seal)}
+.mk-kart{margin-top:24px;padding:20px 22px;background:var(--white);border:1px solid var(--line);
+  border-left:2px solid var(--seal)}
+.mk-kart b{display:block;font-family:var(--sans);font-size:17px;font-weight:500;
+  letter-spacing:-.02em;color:var(--carbon);margin-bottom:8px}
+.mk-kart p{font-size:13.5px;line-height:1.6;color:var(--gray);margin:0 0 14px}
+.mk-kart a{display:block;font-size:13.5px;line-height:1.5;padding:5px 0;color:var(--gray);
+  text-decoration:none;transition:color .18s var(--ease)}
+.mk-kart a:hover{color:var(--seal)}
+.mk-kart .mk-tel{font-size:16px;font-weight:600;color:var(--seal)}
+.hukuk-content h2{scroll-margin-top:96px}

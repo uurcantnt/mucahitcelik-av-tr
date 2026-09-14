@@ -58,6 +58,16 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
+# Yapay zekâ arama ve kullanıcı ajanları: cevaplarda kaynak gösterilebilmek için izinli
+# (eğitim amaçlı tarayıcılar yukarıdaki kurallara tabidir)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
 # Arama motoru tarayıcıları için kısıtlama yoktur
 User-agent: *
 Allow: /

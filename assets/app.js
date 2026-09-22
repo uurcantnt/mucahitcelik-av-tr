@@ -196,12 +196,16 @@ function hareketKapali(){
     });
     var accBtns=vpanels.map(function(p){return p.querySelector(".acc-btn")});
     var bodies=vpanels.map(function(p){return p.querySelector(".pbody")});
+    /* Akordiyonda (mobil) hiçbir başlık kendiliğinden AÇIK GELMEZ; -1 = hepsi kapalı.
+       Kullanıcı hangisine dokunursa o açılır. */
+    var accAcik=-1;
     accBtns.forEach(function(b,i){
       if(!b)return;
       b.addEventListener("click",function(){
         var open=b.getAttribute("aria-expanded")==="true";
         b.setAttribute("aria-expanded",String(!open));
         bodies[i].hidden=open;
+        accAcik=open?-1:i;
         if(!open){
           vpanels[i].classList.remove("in");void vpanels[i].offsetWidth;
           vpanels[i].classList.add("in");
@@ -213,7 +217,7 @@ function hareketKapali(){
       vpanels.forEach(function(p,i){
         if(acc){
           p.hidden=false;p.removeAttribute("role");p.removeAttribute("tabindex");
-          var open=i===cur;
+          var open=i===accAcik;
           if(accBtns[i])accBtns[i].setAttribute("aria-expanded",String(open));
           if(bodies[i])bodies[i].hidden=!open;
         }else{

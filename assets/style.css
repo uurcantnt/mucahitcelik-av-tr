@@ -325,7 +325,7 @@ button{font:inherit;color:inherit}
   pointer-events:none}
 .fcard[data-pos="1"],.fcard[data-pos="2"],.fcard[data-pos="3"]{pointer-events:none}
 .fcard:not([data-pos="0"])>*{opacity:0;transition:opacity .35s}
-.fcard[data-pos="1"]>.fcard-tab{opacity:.45}
+.fcard[data-pos="1"]>.fcard-tab{opacity:.65;color:var(--seal-deep)}
 .fcard.leaving{transform:translate(-26px,70px) rotate(-9deg) scale(.96);opacity:0;z-index:6}
 .fcard[data-pos="0"]:hover{box-shadow:var(--sh-2)}
 .stack-ctrl{position:absolute;left:0;bottom:-6px;display:flex;align-items:center;gap:14px;

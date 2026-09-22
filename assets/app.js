@@ -275,15 +275,30 @@ function hareketKapali(){
   }
 
   /* ─────────── kaydırma ile beliriş ─────────── */
-  var rvs=dizi(document.querySelectorAll(".rv"));
-  if(reduce||!("IntersectionObserver" in window)){
-    rvs.forEach(function(el){el.classList.add("on")});
-  }else{
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add("on");io.unobserve(en.target)}
-      });
-    },{rootMargin:"0px 0px -8% 0px",threshold:0.08});
-    rvs.forEach(function(el){io.observe(el)});
+  /* İçerik varsayılan olarak GÖRÜNÜRDÜR. Gizleme ("rv-hazir") yalnızca gözlemci
+     gerçekten kurulduktan sonra açılır; böylece betik hata verirse veya bu noktaya
+     hiç ulaşılamazsa bölümler görünmez kalmaz. */
+  try{
+    var rvs=dizi(document.querySelectorAll(".rv"));
+    if(reduce||!("IntersectionObserver" in window)){
+      rvs.forEach(function(el){el.classList.add("on")});
+    }else{
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){en.target.classList.add("on");io.unobserve(en.target)}
+        });
+      },{rootMargin:"0px 0px -8% 0px",threshold:0.08});
+      rvs.forEach(function(el){io.observe(el)});
+      root.classList.add("rv-hazir");
+      /* emniyet: ekrandan uzun bloklar eşiğe ulaşamayabilir; 6 sn sonra kalanları aç */
+      setTimeout(function(){
+        rvs.forEach(function(el){
+          var r=el.getBoundingClientRect();
+          if(!el.classList.contains("on") && r.top < window.innerHeight*1.5) el.classList.add("on");
+        });
+      },6000);
+    }
+  }catch(e){
+    dizi(document.querySelectorAll(".rv")).forEach(function(el){el.classList.add("on")});
   }
 })();

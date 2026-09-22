@@ -868,9 +868,9 @@ html[lang="en"] .mb-tr{display:none}
 html[lang="en"] .mb-en{display:inline}
 
 /* ═════════ REVEAL ═════════ */
-.js .rv{opacity:0;transform:translateY(18px);
+.rv-hazir .rv{opacity:0;transform:translateY(18px);
   transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .rv.on{opacity:1;transform:none}
+.rv-hazir .rv.on{opacity:1;transform:none}
 
 /* ═════════ RESPONSIVE ═════════ */
 @media(max-width:1100px){
@@ -963,7 +963,7 @@ html[lang="en"] .mb-en{display:inline}
   *,*::before,*::after{animation:none!important;transition:none!important;
     scroll-behavior:auto!important}
   html{scroll-behavior:auto}
-  .js .rv{opacity:1;transform:none}
+  .rv-hazir .rv{opacity:1;transform:none}
   .step{transform:none!important}
 }
 
